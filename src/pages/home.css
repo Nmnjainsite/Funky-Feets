@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Fira+Sans:wght@300;400&family=Gentium+Book+Plus&family=Lato&family=Libre+Franklin:wght@100&family=Lora:ital,wght@1,500&family=Macondo&family=Oleo+Script+Swash+Caps&family=PT+Serif:ital,wght@0,400;1,700&family=Patua+One&family=Permanent+Marker&family=Roboto&family=Roboto+Slab:wght@300&family=Signika+Negative:wght@500;600&display=swap');
+
+:root{
+  --primary-color:white;
+  --secondary-color:yellow;
+--background-color:#292524;
+}
+
+/* ----------------header-------------- */
+
+.title-container{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  color: var(--primary-color);
+ text-align: center;
+background-color: 
+var(--background-color)
+;
+position: fixed;
+width: 100%;
+border-radius: 0.5rem;
+z-index: 2;
+height:6rem;
+box-shadow: 0 1rem 1rem rgba(0,0,0,0.15), 0 0.5rem 1rem rgba(0,0,0,0.2);
+top: -1rem;
+border: 0px solid var(--background-color);
+}
+.title{
+  float: left;
+  font-family: 'Macondo', cursive;
+  margin: 1.5rem;
+ position: relative;
+ top: 0.3rem; 
+}
+.item-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   margin: 0.5rem;
+ position: relative;
+ right: 3rem;
+}
+/* -----------search bar------------- */
+
+  .input{
+margin-top: 1.5rem;
+margin-left: 8rem;
+border: none;
+border-radius: 0.5rem;
+padding: 0.8rem;
+width: 25%;
+transition: width 0.4s ease-in-out;
+-webkit-transition: width 0.4s ease-in-out;
+}  
+ 
+/* -------icons------- */
+
+.badge-icons{
+    border: none;
+width: 80%;
+bottom: 2.3rem;
+left: 11.5rem;
+font-size: 2rem;
+position: relative;
+ text-align: center;
+ color:var(--primary-color);
+ cursor: pointer;
+}
+
+.number {
+    position: relative;
+    color: 
+    var(--background-color);
+    background-color: 
+    var(--secondary-color);
+    padding: 7px 12px;
+    width: 5px;
+    border-radius: 5rem;
+    bottom: 55px;
+    left: 1rem;
+    border: none;
+    font-size: 15px;
+    margin: auto;
+    font-family: 'Arvo', serif;
+  }
+
+  .badge-icons-2{
+    border: none;
+    width: 75%;
+    bottom: 7.1rem;
+    left: 8.9rem;
+    font-size: 2rem;
+    position: relative;
+     text-align: center;
+     color: var(--primary-color);
+    }
+
+    .number-2{
+        position: relative;
+        color: var(--background-color);
+        background-color:var(--secondary-color);
+        padding: 7px 12px;
+        width: 5px;
+        border-radius: 5rem;
+        bottom: 55px;
+        left: 1.3rem;
+        border: none;
+        font-size: 15px;
+        margin: auto;
+        font-family: 'Arvo', serif;
+    }
+
+    .right-nav{
+        float: right;
+        position: relative;
+        bottom: 12.3rem;
+        right: 2rem;
+        font-size: 1.3rem;
+        font-family: 'Arvo', serif;
+    }
+
+    .btn-right{
+        padding: 0.6rem;
+        border-radius: 0.6rem;
+         margin-left: 0.4rem;
+        background-color: var(--secondary-color);
+        cursor: pointer;
+        color: var(--background-color);
+    }
+
+      #btn{
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.7rem;
+    height: 3rem;
+      width: 15%; 
+       background-color: 
+       var(--secondary-color);
+       color: var(--background-color);
+  cursor: pointer;
+  margin-top: 12rem;
+  margin-left: 8rem;
+   text-decoration: none;
+  text-align: center; 
+ 
+}
+
+#btn:hover{
+  background-color: var(--primary-color);
+  border: 1px solid var(--background-color);
+}
+
+.btn-right:hover{
+  background-color: var(--primary-color);
+
+}
+
+/* --------typography---------- */
+
+.description-container{
+width: 100%;
+   position: relative;
+   top: -2rem;
+}
+.description{
+   width: 32%;
+   font-size: 1rem;
+    position: relative;
+    left: 1.5rem;
+    top: 11rem;
+  font-family: 'Lato', sans-serif;
+}
+
+.img{
+    width:32%;
+    float:right;
+    position:relative;
+   right: 0.5rem;
+}
+
+.img-2{
+    width:30%;
+    float:right;
+    position:relative;
+}
+
+/* ------------crocs cards--------- */
+
+.horizontal-card{
+  margin-top: 5rem;
+ position: relative;
+float: right;
+ bottom: 5rem;
+ right: 2rem;
+ padding: 0.5rem;
+ border-radius: 0.5rem;
+  width: 40%;
+}
+
+.horizontal-card>p{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.horizontal-img{
+  width: 100%;
+
+}
+
+.crocs-card{
+  margin-top: 5rem;
+  position: relative;
+float: left;
+  bottom: 5rem;
+  left: 2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+   width: 40%; 
+}
+
+.crocs-img{
+  width: 100%;
+}
+
+.card-btn{
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border: none;
+}
+
+.crocs-btn{
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  width: 9rem;
+}
+
+ .card-typography{
+  font-family: 'Lora', serif;
+} 
+
+/* ----------responsive image----------- */
+
+ .full-screen-card{
+  margin: 4rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+   width: 90%;
+ position: relative;
+}
+
+.full-screen-img{
+  width: 100%;
+}
+
+.full-screen-typo{
+ text-align: center;
+ font-family: 'Lato', sans-serif;
+} 
+
+/* -------------trending items------- */
+
+  .trending-items{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+text-align: center;
+position: relative;
+width: 100%;
+height:6rem;
+top: -3rem;
+}
+
+.formal-shoes{
+float: left;
+margin: 1rem;
+position: relative;
+top: 0.5rem; 
+margin-left: 3rem;
+margin-top: -0.1rem;
+}
+ 
+ .trending-pics{
+  width: 13rem;
+}
+
+.btn-formal{
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  width: 9rem;
+ 
+}
+.btn-formal:hover{
+  color: var(--background-color);
+  background-color: var(--primary-color);
+}
+.brand-name{
+  margin: 0.1rem;
+  font-family: 'Lato', sans-serif;
+}
+
+.adidas-shoes{
+ float: left;
+ margin-top: 0rem;
+margin-left: 3rem;
+border: none;
+border-radius: 0.5rem;
+padding: 0.8rem;
+width: 25%;
+transition: width 0.4s ease-in-out;
+-webkit-transition: width 0.4s ease-in-out;
+}
+
+.sports-shoes{
+ float: left;
+ margin-top: 1rem;
+margin-left: 3rem;
+border: none;
+border-radius: 0.5rem;
+padding: 0.8rem;
+width: 25%;
+position: relative;
+top: -1rem;
+transition: width 0.4s ease-in-out;
+-webkit-transition: width 0.4s ease-in-out;
+
+}
+
+ /* .sneakers-shoes{
+float: right;
+margin-top: -21rem;
+border: none;
+
+border-radius: 0.5rem;
+padding: 0.8rem;
+width: 25%;
+position: relative;
+top: -1.5rem;
+left: 0rem;
+transition: width 0.4s ease-in-out;
+-webkit-transition: width 0.4s ease-in-out;
+}   */
+
+/* ----------offer---------- */
+
+.offer-template{
+width: 90%;
+margin-bottom: 4rem;
+margin-left: 4.5rem;
+}
+
+/* -----------footer----------- */
+.footer{
+ text-align: center;
+ font-size: 1rem;
+margin: 1rem;
+margin-top: -3rem;
+}
+
+.footer>a{
+  margin: 0.5rem;
+  cursor: pointer;
+  color: var(--background-color);
+  font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+/* -----------media query for mobiles---------- */
+
+@media only screen and (max-width: 600px) {
+   .title-container{
+    height: 9rem;
+   }
+   .right-nav{
+    position: relative;
+    bottom: 8.5rem;
+   }
+   #btn{
+ 
+ margin-left: 3rem;
+ margin-top: 11rem;
+}
+
+.full-screen-card{
+  right: 3rem;
+  position: relative;
+}
+.trending-pics{
+  width: 9rem;
+}
+.offer-template{
+  margin: 1.5rem;
+  margin-top: -5rem;
+  }
+
+  }
+
+

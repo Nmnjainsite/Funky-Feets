@@ -8,23 +8,32 @@ import { v4 as uuid } from "uuid";
 export const products = [
   {
     _id: uuid(),
-    title: "You Can WIN",
-    author: "Shiv Khera",
+   name: "Red Chief",
     price: "5000",
-    categoryName: "non-fiction",
+   
+    categoryName: "Boots",
   },
   {
     _id: uuid(),
-    title: "You are Winner",
-    author: "Junaid Qureshi",
+   name: "Air Max",
     price: "3000",
-    categoryName: "horror",
+    img: 'https://m.media-amazon.com/images/I/81opGKIBKbL._UX500_.jpg',
+    categoryName: "Formal",
   },
   {
     _id: uuid(),
-    title: "Think and Grow Rich",
-    author: "Shiv Khera",
+    name: "adidas",
+    
     price: "1000",
-    categoryName: "fiction",
+    img: 'https://m.media-amazon.com/images/I/81opGKIBKbL._UX500_.jpg',
+    categoryName: "Formal",
+    
+  },
+  {
+    _id: uuid(),
+    name: "Lee Cooper",
+    price: "1000",
+    img: 'https://images.pexels.com/photos/2529147/pexels-ph…jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    categoryName: "Sport",
   },
 ];
