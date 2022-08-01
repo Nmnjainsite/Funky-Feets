@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Funky-Feet/static/css/main.8846f7b3.chunk.css",
+    "main.js": "/Funky-Feet/static/js/main.761798ce.chunk.js",
+    "main.js.map": "/Funky-Feet/static/js/main.761798ce.chunk.js.map",
+    "runtime-main.js": "/Funky-Feet/static/js/runtime-main.3f9e658b.js",
+    "runtime-main.js.map": "/Funky-Feet/static/js/runtime-main.3f9e658b.js.map",
+    "static/js/2.be98c211.chunk.js": "/Funky-Feet/static/js/2.be98c211.chunk.js",
+    "static/js/2.be98c211.chunk.js.map": "/Funky-Feet/static/js/2.be98c211.chunk.js.map",
+    "index.html": "/Funky-Feet/index.html",
+    "static/css/main.8846f7b3.chunk.css.map": "/Funky-Feet/static/css/main.8846f7b3.chunk.css.map",
+    "static/js/2.be98c211.chunk.js.LICENSE.txt": "/Funky-Feet/static/js/2.be98c211.chunk.js.LICENSE.txt",
+    "static/media/adidas.fa106338.jpg": "/Funky-Feet/static/media/adidas.fa106338.jpg",
+    "static/media/air.feb21f56.jpg": "/Funky-Feet/static/media/air.feb21f56.jpg",
+    "static/media/crocs-men.c65b36cc.jpg": "/Funky-Feet/static/media/crocs-men.c65b36cc.jpg",
+    "static/media/crocs.8a1bbeea.jpg": "/Funky-Feet/static/media/crocs.8a1bbeea.jpg",
+    "static/media/img2.5cea9a84.jpg": "/Funky-Feet/static/media/img2.5cea9a84.jpg",
+    "static/media/red.a2cc35e6.jpg": "/Funky-Feet/static/media/red.a2cc35e6.jpg",
+    "static/media/sneakers.35a389a7.jpg": "/Funky-Feet/static/media/sneakers.35a389a7.jpg",
+    "static/media/sports.57a63ac8.jpg": "/Funky-Feet/static/media/sports.57a63ac8.jpg",
+    "static/media/women.209dfb0f.jpg": "/Funky-Feet/static/media/women.209dfb0f.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3f9e658b.js",
+    "static/js/2.be98c211.chunk.js",
+    "static/css/main.8846f7b3.chunk.css",
+    "static/js/main.761798ce.chunk.js"
+  ]
+}
