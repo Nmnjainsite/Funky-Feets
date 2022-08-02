@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <nav>
         <Link to="/home" >Funky Feet</Link>
-
+        <Link to="/Products">Product</Link>
         </nav>
      
        

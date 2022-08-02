@@ -12,7 +12,6 @@ import adidas from './adidas.jpg';
 import sneakers from './sneakers.jpg';
 import sports from './sports.jpg';
 import { BsFillCartFill,BsFillHeartFill,BsGithub,BsTwitter,BsInstagram,BsLinkedin } from "react-icons/bs";
-import { Link } from "react-router-dom";
 
 export default function Home (){
 
@@ -77,7 +76,7 @@ Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs. Prefect for t
 <button className="crocs-btn">Shop Men Casuals</button>
            </div>
           
-{/* --------------------responsive image----------------- */}
+{/* --------------------responsive images----------------- */}
 
           <div className="full-screen-card">
           <img src={air} className="full-screen-img"></img>
@@ -117,6 +116,8 @@ Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs. Prefect for t
             <img src={sneakers} className="trending-pics"></img>
             <p className="brand-name">
                       Nike</p>
+                   
+
             <button className="add-to-cart">Add To Cart</button>
             </div> 
 
@@ -134,6 +135,9 @@ Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs. Prefect for t
             <p className="brand-name">
                      Liberty</p>
             <button className="add-to-cart">Add To Cart</button>
+
+            <button className="btn-formal">Add To Cart</button>
+
             </div> 
 
            </div>
@@ -144,7 +148,7 @@ Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs. Prefect for t
             {/* -------------footer------------------------- */}
           
            <footer className="footer">
-           <p>© Funky Feet 2022. All rights reserved. Site – Managed by Naman Jain .</p>
+           <p>© Funky Feet 2022. All rights reserved. Site - Managed by Naman Jain .</p>
 
             <a href="https://github.com/Nmnjainsite">
             <BsGithub></BsGithub></a>
