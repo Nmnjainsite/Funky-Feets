@@ -4,6 +4,8 @@ import women from './women.jpg';
 import img2 from "./img2.jpg";
 import red from './red.jpg';
 import air from "./air.jpg";
+import puma from './puma.jpg'
+import shoes from './shoes.jpg'
 import crocs from "./crocs.jpg";
 import crocsMen from './crocs-men.jpg';
 import adidas from './adidas.jpg';
@@ -17,11 +19,14 @@ export default function Home (){
     return (
         <div className="App">
           {/*-------------header-------------- */}
+          
           <div className="title-container">
           <h1 className="title">Funky Feet</h1>
-       
-          <div className="item-container">
+        
+        
           <input className="input" placeholder="serach your category or brand"></input>
+
+          
           <div className="badge-icons">
         <BsFillCartFill></BsFillCartFill>
         <div className="number">2</div>
@@ -30,7 +35,9 @@ export default function Home (){
         <BsFillHeartFill></BsFillHeartFill>
         <div className="number-2">2</div>
           </div>
-          </div>
+         
+         
+        
           <div className="right-nav">
         Hi,User
         <button className="btn-right">Login</button>
@@ -43,7 +50,7 @@ export default function Home (){
           <h4 className="description">       
         Casual shoes for the Friday look you need this season - "To impress others you need big brands, to express a good pair is enough"</h4>
        
-        <button id="btn">Shop Now</button>
+        <button  id="btn">Shop Now</button>
          <img src={red}className="img-2"></img>
        <img src={img2} className="img"></img>
         </div>
@@ -77,43 +84,62 @@ Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs. Prefect for t
           <h1 className="full-screen-typo">The "EVERY DAY" Casuals</h1>
           <p style={{textAlign:"center"}}>Feeling bold? Complete that look. Our "Every Day" casuals are designed to complete any look this season.</p>
           </div>
-
-          <img src="https://img.freepik.com/premium-psd/banner-sport-s…facebook-web-banner-template_70055-853.jpg?w=2000" className="offer-template"></img>
+       
+       <div className="offer-img">
+       <img src="https://img.freepik.com/premium-psd/banner-sport-s…facebook-web-banner-template_70055-853.jpg?w=2000" className="offer-template"></img>
+       </div>
+        
 
           {/* ----------------add to cart cards------------------------- */}
-       
+          <h1 style={{textAlign:"center"}}>Trending Items</h1>
            <div className="trending-items">
-           <h1 >Trending Items</h1>
+           
 
             <div className="formal-shoes">
             <img src={women} className="trending-pics"></img>
             <p className="brand-name">Lee Cooper</p>
-            <button className="btn-formal">Add To Cart</button>
+            <button className="add-to-cart">Add To Cart</button>
             </div>
 
             <div className="adidas-shoes">
             <img src={adidas} className="trending-pics"></img>
             <p className="brand-name">adidas</p>
-            <button className="btn-formal">Add To Cart</button>
+            <button className="add-to-cart">Add To Cart</button>
             </div>
 
             <div className="sports-shoes">
             <img src={sports} className="trending-pics"></img>
             <p className="brand-name">Puma</p>
-            <button className="btn-formal">Add To Cart</button>
+            <button className="add-to-cart">Add To Cart</button>
            
             </div>
-            {/* <div className="sneakers-shoes">
+            <div className="sneakers-shoes">
             <img src={sneakers} className="trending-pics"></img>
             <p className="brand-name">
                       Nike</p>
-            <button className="btn-formal">Add To Cart</button>
-            </div>  */}
+            <button className="add-to-cart">Add To Cart</button>
+            </div> 
+
+           
+            <div className="sneakers-shoes">
+            <img src={puma} className="trending-pics"></img>
+            <p className="brand-name">
+                      Puma</p>
+            <button className="add-to-cart">Add To Cart</button>
+            </div> 
+
+         
+            <div className="sneakers-shoes">
+            <img src={shoes} className="trending-pics"></img>
+            <p className="brand-name">
+                     Liberty</p>
+            <button className="add-to-cart">Add To Cart</button>
+            </div> 
 
            </div>
             
 
-            <hr style={{marginBottom:"5rem",width:"80%"}}/>
+               <hr style={{width:"80%"}}/>
 
             {/* -------------footer------------------------- */}
           

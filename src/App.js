@@ -7,9 +7,10 @@ export default function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/home">Home </Link> ||
-         <Link to = "/Products">Product</Link>
-      </nav>
+        <Link to="/home" >Funky Feet</Link>
+
+        </nav>
+     
        
       <Routes>
         <Route path="/home" element={<Home/>} />
