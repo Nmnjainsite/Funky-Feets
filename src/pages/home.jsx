@@ -103,12 +103,12 @@ Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs. Prefect for t
             <button className="btn-formal">Add To Cart</button>
            
             </div>
-            {/* <div className="sneakers-shoes">
+            <div className="sneakers-shoes">
             <img src={sneakers} className="trending-pics"></img>
             <p className="brand-name">
                       Nike</p>
             <button className="btn-formal">Add To Cart</button>
-            </div>  */}
+            </div> 
 
            </div>
             
