@@ -12,6 +12,7 @@ import adidas from './adidas.jpg';
 import sneakers from './sneakers.jpg';
 import sports from './sports.jpg';
 import { BsFillCartFill,BsFillHeartFill,BsGithub,BsTwitter,BsInstagram,BsLinkedin } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export default function Home (){
 
@@ -20,12 +21,10 @@ export default function Home (){
           {/*-------------header-------------- */}
           
           <div className="title-container">
-          <h1 className="title">Funky Feet</h1>
-        
-        
+      <h1 className="title">Funky Feet</h1> 
+
           <input className="input" placeholder="serach your category or brand"></input>
 
-          
           <div className="badge-icons">
         <BsFillCartFill></BsFillCartFill>
         <div className="number">2</div>
@@ -34,9 +33,7 @@ export default function Home (){
         <BsFillHeartFill></BsFillHeartFill>
         <div className="number-2">2</div>
           </div>
-         
-         
-        
+       
           <div className="right-nav">
         Hi,User
         <button className="btn-right">Login</button>
@@ -49,7 +46,7 @@ export default function Home (){
           <h4 className="description">       
         Casual shoes for the Friday look you need this season - "To impress others you need big brands, to express a good pair is enough"</h4>
        
-        <button  id="btn">Shop Now</button>
+           <Link to="/Products"><button id="btn">Shop Now</button></Link>
          <img src={red}className="img-2"></img>
        <img src={img2} className="img"></img>
         </div>
@@ -135,17 +132,14 @@ Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs. Prefect for t
             <p className="brand-name">
                      Liberty</p>
             <button className="add-to-cart">Add To Cart</button>
-
-            <button className="btn-formal">Add To Cart</button>
-
             </div> 
 
            </div>
-            
-
+       
+               
                <hr style={{width:"80%"}}/>
 
-            {/* -------------footer------------------------- */}
+            {/* ------------------------footer------------------------- */}
           
            <footer className="footer">
            <p>© Funky Feet 2022. All rights reserved. Site - Managed by Naman Jain .</p>

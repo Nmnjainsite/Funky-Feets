@@ -6,10 +6,10 @@ import { Link, Routes, Route } from "react-router-dom";
 export default function App() {
   return (
     <div className="App">
-      <nav>
-        <Link to="/home" >Funky Feet</Link>
-        <Link to="/Products">Product</Link>
-        </nav>
+      {/* <nav>
+        <Link to="/home">Funky Feet</Link>
+        <Link to="/Products">Products</Link>
+        </nav> */}
      
        
       <Routes>
