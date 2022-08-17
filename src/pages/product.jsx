@@ -1,117 +1,183 @@
-import React from "react"
-import {useEffect,useState} from "react"
-import axios from 'axios';
+import React from "react";
 import "./product.css";
-import { BsFillCartFill,BsFillHeartFill,BsGithub,BsTwitter,BsInstagram,BsLinkedin } from "react-icons/bs";
-import { BiRupee } from "react-icons/bi"
-import {Link} from "react-router-dom"
-export default function Product (){
-    const [data,setData] = useState([]);
-    const [loader,setLoader] = useState(true);
-  
-  
-useEffect(() => {
-    (async() => {  try {
-      const getData = await axios.get("/api/products")
-            setLoader(false);
-            setData(getData.data.products);
-          ;
-       } catch (error) {
-        console.error("error occured")
-       }})()
-  }, []);
+import { useWishlist } from "./wishlist-context";
+import { findArray } from "../backend/utils/find";
 
- 
+import {
+  BsFillCartFill,
+  BsFillHeartFill,
+  BsStar,
+  BsHeart,
+} from "react-icons/bs";
 
+import { BiRupee } from "react-icons/bi";
+import { Link } from "react-router-dom";
+import { products } from "../backend/db/products";
+import { searchData } from "../backend/utils/searchData";
+import { sortData } from "../backend/utils/sortData";
+import { filterData } from "../backend/utils/filterByTitle";
+import { filterByGender } from "../backend/utils/filterByGender";
+import { filterByCategory } from "../backend/utils/filterByCategories";
+import { filterByDiscount } from "../backend/utils/filterByDiscount";
+import { useFilter } from "./filter-context";
+import { useItem } from "./item-context";
+import { Nav } from "./Nav";
+import { FilterBar } from "./filter-bar";
+import { SortBar } from "./sort-bar";
 
-  const newLocal = <div className="title-container">
-    <h1 className="title">Funky Feet</h1>
+export default function Product() {
+  const [{ value }, dispatch] = useItem();
+  const [{ itemsInWishlist }, wishlistDispatch] = useWishlist();
+  const [
+    {
+      ADIDAS,
+      PUMA,
+      SPARX,
+      AIR,
+      LIBERTY,
+      sortBy,
+      searchValue,
+      discount,
+      categoryName,
+      category,
+    },
+    dispatchItem,
+  ] = useFilter();
 
+  const genderItem = filterByGender(products, category);
+  const categoryItem = filterByCategory(genderItem, categoryName);
+  const discountItem = filterByDiscount(categoryItem, discount);
+  const searchedData = searchData(discountItem, searchValue);
+  const getSortedData = sortData(searchedData, sortBy);
+  const getFilterData = filterData(getSortedData, {
+    ADIDAS,
+    PUMA,
+    SPARX,
+    AIR,
+    LIBERTY,
+  });
+  return (
+    <div className="App">
+      <Nav />
+      <FilterBar />
+      <SortBar />
 
-    <input className="input" placeholder="serach your category or brand"></input>
+      <div className="product-container">
+        {getFilterData &&
+          getFilterData.map(
+            ({
+              _id,
+              name,
+              description,
+              price,
+              qty,
+              best_seller,
+              original_price,
+              discount,
+              color,
+              img,
+              rating,
+            }) => (
+              <li className="card-container">
+                <div className="img-box">
+                  {best_seller && <span className="new-tag">Best Seller</span>}
 
-    <div className="badge-icons">
-      <BsFillCartFill></BsFillCartFill>
-      <div className="number">2</div>
+                  <BsFillHeartFill
+                    className="card-wishlist-emoji"
+                    onClick={() =>
+                      wishlistDispatch({
+                        type: "ADD_TO_WISHLIST",
+                        payload: {
+                          id: _id,
+                          name: name,
+                          price: Number(price),
+                          description: description,
+                          best_seller: best_seller,
+                          discount: discount,
+                          original_price: original_price,
+                          rating: rating,
+                          img: img,
+                          qty: Number(qty),
+                          color: color,
+                        },
+                      })
+                    }
+                  />
+
+                  <img src={img} key={img} className="product-img"></img>
+                  <span className="rating-box">
+                    <BsStar></BsStar>
+                    {rating.rate}/{rating.count}
+                  </span>
+                </div>
+                <div className="product-card-typography">
+                  <h3 key={name}>{name}</h3>
+                  <small
+                    style={{ color: "grey", margin: "-2rem" }}
+                    key={description}
+                  >
+                    {description}
+                  </small>
+                  <p>
+                    <h3
+                      style={{
+                        display: "inline",
+                      }}
+                      key={price}
+                    >
+                      <BiRupee></BiRupee> {price}
+                    </h3>
+
+                    <span
+                      style={{
+                        textDecoration: "line-through",
+                        margin: "0.4rem",
+                      }}
+                      key={original_price}
+                    >
+                      MRP Rs.
+                      {original_price}
+                    </span>
+
+                    <span key={discount} style={{ color: "green" }}>
+                      ({discount} % off)
+                    </span>
+                  </p>
+                  <Link to="/Cart">
+                    <button
+                      className="product-cart-button"
+                      onClick={() =>
+                        dispatch({
+                          type: "even",
+
+                          payload3: Number(original_price - price),
+                          payload2: Number(original_price),
+                          payload: Number(price),
+
+                          payload1: {
+                            id: _id,
+                            name: name,
+                            price: Number(price),
+                            description: description,
+                            best_seller: best_seller,
+                            discount: discount,
+                            original_price: original_price,
+                            rating: rating,
+                            img: img,
+                            qty: Number(qty),
+                            color: color,
+                          },
+                        })
+                      }
+                    >
+                      Add To Cart <BsFillCartFill></BsFillCartFill>
+                    </button>
+                  </Link>
+                </div>
+              </li>
+            )
+          )}
+      </div>
     </div>
-    <div className="badge-icons-2">
-      <BsFillHeartFill></BsFillHeartFill>
-      <div className="number-2">2</div>
-    </div>
-
-    <div className="right-nav">
-      Hi,User
-      <button className="btn-right">Login</button>
-    </div>
-  </div>;
-    return (
-       <div className="App">
-
-        {newLocal}
-    
-       
-      {loader && <div>Getting Data...</div>} 
-     
-         <div className="left-bar">
-          <p className="filter-nav">Filter</p>
-          <label><input type="radio"/>Men</label>
-          <label><input  type="radio"/>Women</label>
-          <label><input  type="radio"/>Kids</label>
-          <hr style={{width:"100%"}}/>
-          <div className="filter-nav">
-           <p>Producer</p>
-           <label><input type="checkbox"/>adidas</label>
-           <label><input type="checkbox"/>Air Max</label>
-           <label><input type="checkbox"/>Puma</label>
-           <label><input type="checkbox"/>Red Chief</label>
-           <hr style={{width:"100%"}}/>
-          </div>
-          <div className="filter-nav">
-            <p>
-              Style
-            </p>
-            <label><input type="checkbox"/>casuals</label>
-           <label><input type="checkbox"/>sneakers</label>
-           <label><input type="checkbox"/>sports</label>
-           <label><input type="checkbox"/>formal</label>
-           <label><input type="checkbox"/>crocs</label>
-          </div>
-          <hr style={{width:"100%"}}/>
-          <div className="filter-nav">
-            <p>
-            Discount
-            </p>
-            <label><input type="checkbox"/>10% and above</label>
-           <label><input type="checkbox"/>20% and above</label>
-           <label><input type="checkbox"/>30% and above</label>
-           <label><input type="checkbox"/>40% and above</label>
-           <label><input type="checkbox"/>50% and above</label>
-          </div>
-          <hr style={{width:"100%"}}/>
-         </div>
-       
-
-         <div className="product-container"> {data && data.map(  (data)  => 
-         <li key={data.name} className="card-container">
-          <div className="img-box"><span className="new-tag">Best Seller </span><BsFillHeartFill className="card-wishlist-emoji"></BsFillHeartFill>
-          <img src={data.img} key={data.img} className="product-img"></img></div>
-     
-        <h3>{data.name }</h3>
-        <p style={{color:"grey"}}>{data.description}</p> 
-        <p><span style={{color:"red",fontSize:"1.3rem"}}><BiRupee></BiRupee> {data.price}</span>
-         <span style={{textDecoration:"line-through",margin:"0.4rem"}}>Rs.{data.original_price} 
-         </span> 
-        <span >({data.discount} OFF)</span>
-        </p>
-        <button className="product-cart-button">Add To Cart <BsFillCartFill></BsFillCartFill></button>
-  
-           </li>
-         )}
-              </div>
-     
-         <Link to="/home">Home</Link>
-       
-       </div>
-    )
+  );
 }
-

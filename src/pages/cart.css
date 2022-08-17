@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: Lato, sans-serif;
+  box-sizing: border-box;
+}
+
+.wishlist-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  border: 1px solid grey;
+  width: 100%;
+
+  padding: 0.8rem;
+}
+.cart {
+  display: grid;
+  margin: 1rem;
+  width: 50%;
+
+  grid-template-columns: repeat(1, 1fr);
+}
+.wishlist-cart {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  width: 100%;
+}
+
+.total-item {
+  float: right;
+  width: 40%;
+  text-align: right;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid grey;
+}
+
+.order-button {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  cursor: pointer;
+  text-align: center;
+}
+
+.order-button:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: 1px solid var(--background-color);
+}
+
+.cart-image {
+  width: 100%;
+}
+
+/* .img-col-1 {
+  width: 80%;
+} */
+
+.wishlist-cart-typography {
+  width: 150%;
+  margin-left: 1rem;
+}
+
+.wishlist-cart-typography > span {
+  margin: 0.2rem;
+}
+.tags {
+  cursor: pointer;
+  float: right;
+  margin: 1rem;
+}
+
+.tags > p {
+  float: right;
+  margin: 0.3rem;
+  margin-top: -0.8rem;
+  position: relative;
+}
+.tags > span {
+  float: right;
+  margin: 0.3rem;
+  margin-top: -0.8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .cart {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 2rem;
+  }
+  .total-item {
+    width: 80%;
+    margin: 2rem;
+  }
+  /* .wishlist-cart {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+  } */
+}
