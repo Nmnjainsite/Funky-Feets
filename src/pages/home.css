@@ -182,13 +182,21 @@
 
 /* ------------crocs cards--------- */
 
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
 .horizontal-card {
   position: relative;
   float: right;
-  right: 1rem;
+  /* right: 1rem; */
   padding: 0.5rem;
   border-radius: 0.5rem;
-  width: 40%;
+  width: 100%;
 }
 
 .horizontal-card > p {
@@ -196,20 +204,20 @@
 }
 
 .horizontal-img {
-  width: 90%;
+  width: 80%;
 }
 
 .crocs-card {
   position: relative;
   float: left;
-  left: 2rem;
+  /* left: 2rem; */
   padding: 0.5rem;
   border-radius: 0.5rem;
-  width: 40%;
+  width: 100%;
 }
 
 .crocs-img {
-  width: 90%;
+  width: 80%;
 }
 
 .card-btn {

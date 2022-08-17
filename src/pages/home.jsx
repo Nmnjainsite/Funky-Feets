@@ -64,28 +64,29 @@ export default function Home() {
       </div>
 
       {/* ---------------------crocs cards---------------- */}
-      <div className="horizontal-card">
-        <img src={crocs} className="horizontal-img"></img>
-        <h2 className="card-typography"> Graceful and Charming</h2>
-        <p className="card-typography">
-          Multiply the grace and charm you possess with footwear for her that
-          enhances your style to the core. "Give a girl the right shoes and she
-          can conqure the world"
-        </p>
-        <button className="card-btn">Shop Women Casuals</button>
+      <div className="grid-cards">
+        <div className="horizontal-card">
+          <img src={crocs} className="horizontal-img"></img>
+          <h2 className="card-typography"> Graceful and Charming</h2>
+          <p className="card-typography">
+            Multiply the grace and charm you possess with footwear for her that
+            enhances your style to the core. "Give a girl the right shoes and
+            she can conqure the world"
+          </p>
+          <button className="card-btn">Shop Women Casuals</button>
+        </div>
+
+        <div className="crocs-card">
+          <img src={crocsMen} className="crocs-img"></img>
+          <h2 className="card-typography">Time to be LAZY! </h2>
+
+          <p className="card-typography">
+            Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs.
+            Prefect for the lazy summer afternoons.
+          </p>
+          <button className="crocs-btn">Shop Men Casuals</button>
+        </div>
       </div>
-
-      <div className="crocs-card">
-        <img src={crocsMen} className="crocs-img"></img>
-        <h2 className="card-typography">Time to be LAZY! </h2>
-
-        <p className="card-typography">
-          Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs.
-          Prefect for the lazy summer afternoons.
-        </p>
-        <button className="crocs-btn">Shop Men Casuals</button>
-      </div>
-
       {/* --------------------responsive images----------------- */}
 
       <div className="full-screen-card">
