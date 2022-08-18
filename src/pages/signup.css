@@ -1,0 +1,42 @@
+.sign-box {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-container {
+  padding: 1rem;
+}
+
+.sign-container > input {
+  width: 20rem;
+  padding: 0.3em;
+  border-radius: 0.3em;
+  margin: 0.5em;
+  padding-bottom: 0.6em;
+  border: 1px solid var(--background-color);
+  cursor: text;
+}
+
+.register-btn > button {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  padding: 0.5rem 4rem;
+  cursor: pointer;
+  border: 1px solid var(--background-color);
+  font-size: 1rem;
+  border-radius: 0.3em;
+  align-self: center;
+  margin-left: 4.5rem;
+}
+
+.register-btn > button:hover {
+  color: var(--background-color);
+  background-color: var(--primary-color);
+}
+
+@media only screen and (max-width: 600px) {
+  .signup-img {
+    visibility: hidden;
+    position: absolute;
+  }
+}

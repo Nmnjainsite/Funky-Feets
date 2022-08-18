@@ -1,8 +1,9 @@
 .wishlist-box-container {
   list-style: none;
   margin: 2rem;
-  width: 100%;
+  width: 95%;
   display: grid;
+
   grid-template-columns: repeat(5, 1fr);
   text-align: center;
 }
@@ -13,14 +14,20 @@
   text-align: center;
 }
 
-.product-card-typography {
+.wish-card-typography {
   position: relative;
   font-family: "Lato", sans-serif;
   top: -1rem;
 }
+
+.wish-img {
+  width: 100%;
+}
+
 @media only screen and (max-width: 600px) {
   .wishlist-box-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    width: 80%;
   }
 }

@@ -8,23 +8,18 @@ import {
 } from "react-icons/bs";
 import { BiRupee } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
-import { products } from "../backend/db/products";
-import Product from "./product";
 import { useItem } from "./item-context";
 import { Nav } from "./Nav";
-import { WishlistCardView } from "./wishlistCart";
+import { useWishlist } from "./wishlist-context";
 import "./cart.css";
-import { ProductCard } from "./ProductCard";
-import { findArray } from "../backend/utils/find";
+
 export default function Cart() {
   const [
     { item, value, totalPrice, ogPrice, totalDiscount, orderTotal },
     dispatch,
   ] = useItem();
 
-  // console.log({ item });
-  // console.log(item.length);
-  console.log({ totalDiscount });
+  const [{ wishlistState }, wishlistDispatch] = useWishlist();
   return (
     <div>
       <Nav />
@@ -36,13 +31,12 @@ export default function Cart() {
         <p>
           <span style={{ float: "left" }}>MRP :</span>
           <span>
-            {" "}
             <BiRupee></BiRupee>
             {ogPrice}
           </span>
         </p>
         <p>
-          <span style={{ float: "left" }}>Discount :</span>{" "}
+          <span style={{ float: "left" }}>Discount :</span>
           <span>
             <BiRupee></BiRupee>
             {totalDiscount}
@@ -81,21 +75,24 @@ export default function Cart() {
             <ul className="wishlist-container">
               <li className="wishlist-cart ">
                 <div className="img-col-1 ">
-                  <img src={item.img} className="cart-image"></img>
+                  <img
+                    src={item.img}
+                    className="cart-image"
+                    key={item.img}
+                  ></img>
                   {/* <span style={{ float: "right" }}>
-                    {" "}
+                 
                     <BsStar></BsStar> {item.rating.rate}/{item.rating.count}
                   </span> */}
                 </div>
 
-                <div className="wishlist-cart-typography ">
-                  <p>
-                    {/* {item.name} */}
-                    <h3> {item.description}</h3>
-                  </p>
+                <div className="wishlist-cart-typography">
+                  <div>
+                    <h3 key={item.description}> {item.description}</h3>
+                  </div>
 
-                  <p>
-                    <h3 style={{ display: "inline" }}>
+                  <div>
+                    <h3 style={{ display: "inline" }} key={item.price}>
                       <BiRupee></BiRupee>
                       {item.price}
                     </h3>
@@ -104,27 +101,37 @@ export default function Cart() {
                         textDecoration: "line-through",
                         margin: "0.3rem",
                       }}
+                      key={item.original_price}
                     >
                       {" "}
-                      Rs.{item.original_price}{" "}
+                      Rs.{item.original_price}
                     </span>
-                    <span style={{ color: "green" }}>
-                      {" "}
+                    <span style={{ color: "green" }} key={item.discount}>
                       ({item.discount}% off)
                     </span>
-                  </p>
-                  <span style={{ fontWeight: "bold" }}>
-                    Colour: {item.color}
-                  </span>
+
+                    <p style={{ fontWeight: "bold" }} key={item.color}>
+                      Colour: {item.color}
+                    </p>
+                  </div>
                   <p>
-                    <span style={{ margin: "0.3rem" }}>{item.qty}</span>
+                    <span style={{ margin: "0.3rem" }} key={item.qty}>
+                      {item.qty}
+                    </span>
                     <button>+</button> <button>-</button>
                   </p>
                 </div>
               </li>
               <div className="tags">
                 <p>
-                  <BsHeart></BsHeart>
+                  <BsHeart
+                    onClick={() =>
+                      wishlistDispatch({
+                        type: "ADD_TO_WISHLIST",
+                        payload: item,
+                      })
+                    }
+                  ></BsHeart>
                 </p>
                 <span>
                   <BsXLg

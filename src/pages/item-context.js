@@ -67,6 +67,7 @@ function itemFunction(state, action) {
     case "CLEAR":
       return {
         item: [],
+        value: 0,
       };
     default:
       return state;

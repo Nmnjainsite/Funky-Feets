@@ -315,10 +315,10 @@ export const products = [
       rate: 4,
       count: 5,
     },
-    best_seller: false,
+    best_seller: true,
     original_price: 12999,
     discount: 50,
-    img: "https://img.tatacliq.com/images/i7/437Wx649H/MP000000008874272_437Wx649H_202112011835231.jpeg",
+    img: "https://thumbs.dreamstime.com/b/funky-canvas-shoes-yellow-white-202724035.jpg",
     categoryName: "sneakers",
   },
 

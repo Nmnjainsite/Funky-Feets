@@ -5,17 +5,16 @@ const useWishlist = () => useContext(WishlistContext);
 
 const initialState = {
   itemInWishlist: [],
+  itemValue: 0,
 };
 
 function WishlistProvider({ children }) {
-  const [{ wishlistState, itemInWishlist }, wishlistDispatch] = useReducer(
-    wishlistFunction,
-    initialState
-  );
+  const [{ wishlistState, itemInWishlist, itemValue }, wishlistDispatch] =
+    useReducer(wishlistFunction, initialState);
 
   return (
     <WishlistContext.Provider
-      value={[{ wishlistState, itemInWishlist }, wishlistDispatch]}
+      value={[{ wishlistState, itemValue, itemInWishlist }, wishlistDispatch]}
     >
       {children}
     </WishlistContext.Provider>
@@ -31,6 +30,7 @@ function wishlistFunction(wishlistState, wishlistAction) {
           ...wishlistState.itemInWishlist,
           wishlistAction.payload,
         ],
+        itemValue: wishlistState.itemValue + 1,
       };
 
     case "REMOVE_FROM_WISHLIST":
@@ -39,10 +39,12 @@ function wishlistFunction(wishlistState, wishlistAction) {
         itemInWishlist: wishlistState.itemInWishlist.filter(
           (item) => item.id !== wishlistAction.payload
         ),
+        itemValue: wishlistState.itemInValue - 1,
       };
     case "CLEAR_WISHLIST":
       return {
         itemInWishlist: [],
+        itemValue: 0,
       };
     default:
       return state;

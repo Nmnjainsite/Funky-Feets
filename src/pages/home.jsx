@@ -11,16 +11,9 @@ import crocsMen from "./crocs-men.jpg";
 import adidas from "./adidas.jpg";
 import sneakers from "./sneakers.jpg";
 import sports from "./sports.jpg";
-import {
-  BsFillCartFill,
-  BsFillHeartFill,
-  BsGithub,
-  BsTwitter,
-  BsInstagram,
-  BsLinkedin,
-} from "react-icons/bs";
+import { BsFillCartFill, BsFillHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-
+import { Footer } from "./footer";
 export default function Home() {
   return (
     <div className="App">
@@ -145,28 +138,8 @@ export default function Home() {
         </div>
       </div>
 
-      <hr style={{ width: "80%" }} />
-
       {/* ------------------------footer------------------------- */}
-
-      <footer className="footer">
-        <p>
-          © Funky Feet 2022. All rights reserved. Site - Managed by Naman Jain .
-        </p>
-
-        <a href="https://github.com/Nmnjainsite">
-          <BsGithub></BsGithub>
-        </a>
-        <a href="https://www.linkedin.com/in/naman-jain-97382b231/">
-          <BsLinkedin></BsLinkedin>
-        </a>
-        <a href="https://twitter.com/NamanJa83726591">
-          <BsTwitter></BsTwitter>
-        </a>
-        <a href="https://www.instagram.com/namanjain_321/">
-          <BsInstagram></BsInstagram>
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }

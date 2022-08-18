@@ -31,14 +31,14 @@ function Wishlist() {
                 <img
                   src={itemInWishlist.img}
                   key={itemInWishlist.img}
-                  className="product-img"
+                  className="wish-img"
                 ></img>
                 <span className="rating-box" key={itemInWishlist.rating}>
                   <BsStar></BsStar>
                   {itemInWishlist.rating.rate}/{itemInWishlist.rating.count}
                 </span>
               </div>
-              <div className="product-card-typography">
+              <div className="wish-card-typography">
                 <h3 key={itemInWishlist.name}>{itemInWishlist.name}</h3>
                 <small
                   style={{ color: "grey", margin: "-2rem" }}

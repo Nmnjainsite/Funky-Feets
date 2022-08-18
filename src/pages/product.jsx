@@ -27,7 +27,7 @@ import { SortBar } from "./sort-bar";
 
 export default function Product() {
   const [{ value }, dispatch] = useItem();
-  const [{ itemsInWishlist }, wishlistDispatch] = useWishlist();
+  const [{ itemsInWishlist, itemValue }, wishlistDispatch] = useWishlist();
   const [
     {
       ADIDAS,
@@ -87,6 +87,7 @@ export default function Product() {
                     onClick={() =>
                       wishlistDispatch({
                         type: "ADD_TO_WISHLIST",
+
                         payload: {
                           id: _id,
                           name: name,
