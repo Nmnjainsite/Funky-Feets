@@ -19,9 +19,9 @@ const SignUp = () => {
             <legend>Last Name</legend>
             <input></input>
             <legend>E-mail</legend>
-            <input></input>
+            <input type="email"></input>
             <legend>Create Password</legend>
-            <input></input>
+            <input type="password"></input>
             <div>
               <input type="checkbox"></input>
               <p>Yes, I agree to all the Terms, Privacy policy</p>

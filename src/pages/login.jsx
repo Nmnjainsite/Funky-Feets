@@ -39,7 +39,7 @@ function Login() {
                 <span>Password </span>
                 <small className="forgot-pass"> Forgot Password?</small>
               </div>
-              <input placeholder="Enter your password"></input>
+              <input placeholder="Enter your password" type="password"></input>
               <legend>Confirm Password</legend>
               <input placeholder="Confirm password"></input>
             </div>

@@ -48,7 +48,6 @@
 }
 
 input {
-  cursor: pointer;
   margin-top: -1rem;
 }
 
@@ -139,11 +138,17 @@ input {
   }
   .price-filter {
     margin-right: 4rem;
+    width: 30%;
   }
   .product-logo {
     width: 5rem;
     display: block;
     position: relative;
     top: 1rem;
+    left: -1.5rem;
+  }
+  input {
+    position: relative;
+    right: 1rem;
   }
 }

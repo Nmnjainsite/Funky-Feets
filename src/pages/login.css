@@ -13,24 +13,27 @@
 }
 
 .nav-logo {
-  width: 6rem;
+  width: 5rem;
   position: relative;
 }
 
 .login-box {
   font-family: "Lato", sans serif;
-  margin: 0.5rem;
-  width: 100%;
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-google {
   background-color: var(--primary-color);
   color: var(--background-color);
-  padding: 0.5rem;
+
   border-radius: 0.3rem;
   border: 1px solid var(--background-color);
-  width: 40%;
+  padding: 0.5rem 3rem;
   cursor: pointer;
   margin-bottom: 1.8rem;
 }
@@ -46,7 +49,7 @@
 
 .email-box {
   border-top: 1px solid grey;
-  width: 100%;
+  width: 90%;
   text-align: center;
 }
 
@@ -56,11 +59,13 @@
 }
 
 .email-box > input {
-  padding: 0.6rem 7rem;
-  border-radius: 0.2rem;
-  margin: 0.5rem;
+  cursor: text;
+  width: 18rem;
+  padding: 0.8em;
+  border-radius: 0.3em;
+  margin: 0.5em;
   text-align: center;
-  outline: 0;
+  padding-bottom: 0.6em;
   border: 1px solid var(--background-color);
   cursor: text;
 }
@@ -98,7 +103,7 @@
 
 .login-img {
   width: 80%;
-
+  margin-top: 1rem;
   margin-left: auto;
 }
 
@@ -106,26 +111,21 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   width: 90%;
-  margin: 1rem;
 }
 
 @media only screen and (max-width: 600px) {
-  .login-box {
-    width: 90%;
-  }
-  .login-google {
-    width: 60%;
-  }
-
   .login-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     width: 90%;
-    margin-left: 2rem;
+    margin-left: 0rem;
   }
 
   .login-button {
-    padding: 0.5rem 4rem;
+    padding: 0.5rem 2rem;
+  }
+  .login-button-2 {
+    padding: 0.5rem 0.7rem;
   }
 
   .login-img {

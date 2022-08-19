@@ -342,10 +342,18 @@
     position: relative;
     width: 100%;
   }
+  .badge-icons {
+    font-size: 1.5rem;
+    right: 0.5rem;
+    top: 2rem;
+  }
 
   .badge-icons-2 {
-    right: 1rem;
+    right: 1.8rem;
+    font-size: 1.5rem;
+    top: 0.7rem;
   }
+
   .input {
     width: 5rem;
   }
