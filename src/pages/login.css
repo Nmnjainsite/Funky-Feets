@@ -56,8 +56,7 @@
 }
 
 .email-box > input {
-  width: 50%;
-  padding: 0.6rem;
+  padding: 0.6rem 7rem;
   border-radius: 0.2rem;
   margin: 0.5rem;
   text-align: center;
@@ -70,10 +69,9 @@
   color: var(--primary-color);
   background-color: var(--background-color);
   margin: 1rem;
-  padding: 0.6rem;
   border-radius: 0.3rem;
   cursor: pointer;
-  width: 32%;
+  padding: 0.6rem 5rem;
   font-size: 1rem;
   border: none;
   border: 1px solid var(--background-color);
@@ -82,10 +80,9 @@
   color: var(--primary-color);
   background-color: var(--background-color);
   font-size: 1rem;
-  padding: 0.6rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 0.3rem;
   cursor: pointer;
-  width: 25%;
   border: none;
   border: 1px solid var(--background-color);
 }
@@ -123,8 +120,12 @@
   .login-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    width: 100%;
-    margin: 0;
+    width: 90%;
+    margin-left: 2rem;
+  }
+
+  .login-button {
+    padding: 0.5rem 4rem;
   }
 
   .login-img {

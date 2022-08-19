@@ -1,4 +1,7 @@
 export function sortData(products, sortBy) {
+  if (sortBy === "default") {
+    return products;
+  }
   if (sortBy === "low-price") {
     return products.sort((a, b) => a["price"] - b["price"]);
   }
@@ -11,8 +14,6 @@ export function sortData(products, sortBy) {
   if (sortBy === "high-rating") {
     return products.sort((a, b) => b.rating["rate"] - a.rating["rate"]);
   }
-  if (sortBy === "default") {
-    return products;
-  }
+
   return products;
 }

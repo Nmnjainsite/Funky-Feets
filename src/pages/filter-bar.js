@@ -21,7 +21,10 @@ const FilterBar = () => {
 
   return (
     <div className="left-bar">
-      <span style={{ color: "grey", cursor: "pointer", fontSize: "0.8rem" }}>
+      <span
+        style={{ color: "grey", cursor: "pointer", fontSize: "0.8rem" }}
+        onClick={() => dispatchItem({ type: "CLEAR" })}
+      >
         Remove all filters
       </span>
       <p className="nav-heading">Filter </p>

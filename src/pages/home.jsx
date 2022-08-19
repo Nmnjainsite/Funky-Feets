@@ -14,46 +14,29 @@ import sports from "./sports.jpg";
 import { BsFillCartFill, BsFillHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Footer } from "./footer";
+import { Nav } from "./Nav";
 export default function Home() {
   return (
     <div className="App">
       {/*-------------header-------------- */}
 
-      <div className="title-container">
-        <h1 className="title">Funky Feet</h1>
-
-        <input
-          className="input"
-          placeholder="serach your category or brand"
-        ></input>
-
-        <div className="badge-icons">
-          <BsFillCartFill></BsFillCartFill>
-          <div className="number">0</div>
-        </div>
-        <div className="badge-icons-2">
-          <BsFillHeartFill></BsFillHeartFill>
-          <div className="number-2">0</div>
-        </div>
-
-        <div className="right-nav">
-          Hi,User
-          <button className="btn-right">Login</button>
-        </div>
-      </div>
+      <Nav />
 
       {/* --------typography------------- */}
       <div className="description-container">
-        <h4 className="description">
-          Casual shoes for the Friday look you need this season - "To impress
-          others you need big brands, to express a good pair is enough"
-        </h4>
-
-        <Link to="/Products">
-          <button id="btn">Shop Now</button>
-        </Link>
-        <img src={red} className="img-2"></img>
-        <img src={img2} className="img"></img>
+        <div className="description">
+          <h4>
+            Casual shoes for the Friday look you need this season - "To impress
+            others you need big brands, to express a good pair is enough"
+          </h4>
+          <Link to="/Products">
+            <button id="btn">Shop Now</button>
+          </Link>
+        </div>
+        <div className="image-handler">
+          <img src={red} className="img-2"></img>
+          <img src={img2} className="img"></img>
+        </div>
       </div>
 
       {/* ---------------------crocs cards---------------- */}

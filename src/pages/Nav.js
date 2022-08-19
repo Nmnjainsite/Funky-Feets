@@ -14,6 +14,10 @@ function Nav() {
       <div className="title-container">
         <Link to="/Products" style={{ color: "#292524", cursor: "pointer" }}>
           <h1 className="title">Funky Feet</h1>
+          <img
+            src="https://i.pinimg.com/originals/a5/3c/59/a53c5901712da82a3f52618f14ab2756.jpg"
+            className="product-logo"
+          ></img>
         </Link>
         <input
           className="input"

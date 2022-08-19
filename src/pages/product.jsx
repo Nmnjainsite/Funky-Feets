@@ -112,31 +112,22 @@ export default function Product() {
                   </span>
                 </div>
                 <div className="product-card-typography">
-                  <h3 key={name}>{name}</h3>
-                  <small
-                    style={{ color: "grey", margin: "-2rem" }}
-                    key={description}
-                  >
+                  <h3 key={name} className="product-name">
+                    {name}
+                  </h3>
+                  <small style={{ color: "grey" }} key={description}>
                     {description}
                   </small>
                   <p>
-                    <h3
-                      style={{
-                        display: "inline",
-                      }}
-                      key={price}
-                    >
+                    <span className="product-price" key={price}>
                       <BiRupee></BiRupee> {price}
-                    </h3>
+                    </span>
 
                     <span
-                      style={{
-                        textDecoration: "line-through",
-                        margin: "0.4rem",
-                      }}
+                      className="product-original-price"
                       key={original_price}
                     >
-                      MRP Rs.
+                      Rs.
                       {original_price}
                     </span>
 

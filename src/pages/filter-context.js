@@ -88,7 +88,22 @@ const filterReducer = (state, action) => {
       return { ...state, LIBERTY: !state.LIBERTY };
     case "MAX":
       return { ...state, AIR: !state.AIR };
-
+    case "CLEAR":
+      return {
+        ADIDAS: [],
+        PUMA: [],
+        SPARX: [],
+        AIR: [],
+        LIBERTY: [],
+        MALE: [],
+        FEMALE: [],
+        KIDS: [],
+        sortBy: [],
+        searchValue: null,
+        discount: [],
+        categoryName: [],
+        category: [],
+      };
     default:
       return state;
   }
