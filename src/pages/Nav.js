@@ -4,15 +4,16 @@ import { Wishlist } from "./wishlist";
 import { Link } from "react-router-dom";
 import { BsFillCartFill, BsFillHeartFill } from "react-icons/bs";
 import { useWishlist } from "./wishlist-context";
-
+import { useAuth } from "./auth-context";
 function Nav() {
   const [{ value }] = useItem();
   const [{ searchValue }, dispatchItem] = useFilter();
   const [{ itemValue }] = useWishlist();
+  const { isLoggedIn } = useAuth();
   return (
     <>
       <div className="title-container">
-        <Link to="/Products" style={{ color: "#292524", cursor: "pointer" }}>
+        <Link to="/Products" style={{ color: "black", cursor: "pointer" }}>
           <h1 className="title">Funky Feet</h1>
           <img
             src="https://i.pinimg.com/originals/a5/3c/59/a53c5901712da82a3f52618f14ab2756.jpg"
@@ -41,7 +42,9 @@ function Nav() {
         <div className="right-nav">
           Hi,User
           <Link to="/Login">
-            <button className="btn-right">Login</button>
+            <button className="btn-right">
+              {isLoggedIn ? "Logout" : "Login"}
+            </button>
           </Link>
         </div>
       </div>

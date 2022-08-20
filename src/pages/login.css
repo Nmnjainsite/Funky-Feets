@@ -48,7 +48,6 @@
 }
 
 .email-box {
-  border-top: 1px solid grey;
   width: 90%;
   text-align: center;
 }
@@ -56,14 +55,16 @@
 .forgot-pass {
   float: right;
   width: 45%;
+  cursor: default;
 }
 
 .email-box > input {
   cursor: text;
-  width: 18rem;
+  width: 80%;
   padding: 0.8em;
   border-radius: 0.3em;
   margin: 0.5em;
+  margin-left: 3em;
   text-align: center;
   padding-bottom: 0.6em;
   border: 1px solid var(--background-color);
@@ -115,10 +116,10 @@
 
 @media only screen and (max-width: 600px) {
   .login-container {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    width: 90%;
-    margin-left: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
   }
 
   .login-button {
@@ -129,7 +130,7 @@
   }
 
   .login-img {
-    visibility: hidden;
+    display: none;
     position: absolute;
   }
 }

@@ -12,6 +12,7 @@ const SignUp = () => {
           <div className="sign-container">
             <h1>Register</h1>
             <h3>Fill Your Details</h3>
+            <hr />
             <legend>First Name</legend>
             <input></input>
             <legend>Middle Name</legend>

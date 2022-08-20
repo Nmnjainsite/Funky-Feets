@@ -71,11 +71,6 @@ function itemFunction(state, action) {
       };
     default:
       return state;
-    // case "ADD_TO_CART":
-    //   return {
-    //     ...state,
-    //     productsData: [...state.productsData,action.payload],
-    //   };
   }
 }
 

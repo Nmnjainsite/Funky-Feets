@@ -8,20 +8,22 @@ import { BrowserRouter } from "react-router-dom";
 import { ItemProvider } from "./pages/item-context";
 import { FilterProvider } from "./pages/filter-context";
 import { WishlistProvider } from "./pages/wishlist-context";
-
+import { AuthProvider } from "./pages/auth-context";
 // Call make Server
 makeServer();
 
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
-      <WishlistProvider>
-        <FilterProvider>
-          <ItemProvider>
-            <App />
-          </ItemProvider>
-        </FilterProvider>
-      </WishlistProvider>
+      <AuthProvider>
+        <WishlistProvider>
+          <FilterProvider>
+            <ItemProvider>
+              <App />
+            </ItemProvider>
+          </FilterProvider>
+        </WishlistProvider>
+      </AuthProvider>
     </React.StrictMode>
   </BrowserRouter>,
   document.getElementById("root")

@@ -1,10 +1,55 @@
 import React from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useAuth } from "./auth-context";
 import { Footer } from "./footer";
 import funky from "./funky.jpg";
 import { LoginNav } from "./login-nav";
+import { useState } from "react";
 function Login() {
+  const [userInput, setUserInput] = useState("");
+  const [passwordCheck, setSize] = useState("");
+  const [answer, setAnswer] = useState(false);
+  const [checkEmail, setEmail] = useState("");
+
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  function changeText(event) {
+    const userInput = event.target.value;
+    setUserInput(userInput);
+    setAnswer(false);
+  }
+
+  function checkPassword(event) {
+    const passwordCheck = event.target.value;
+    setAnswer(false);
+    setSize(passwordCheck);
+  }
+
+  function emailHandler(event) {
+    const checkEmail = event.target.value;
+    setAnswer(false);
+    setEmail(checkEmail);
+  }
+
+  function changeTo() {
+    if (checkEmail === "adarshBalak@gmail.com") {
+      navigate("/Products");
+    } else {
+      setAnswer(true);
+    }
+  }
+
+  function changeTo() {
+    if (userInput === passwordCheck) {
+    } else {
+      setUserInput("");
+      setSize("");
+      setAnswer(true);
+    }
+  }
   return (
     <>
       <section>
@@ -33,26 +78,45 @@ function Login() {
 
             <div className="email-box">
               <div style={{ marginTop: "0.8rem" }}>E-mail</div>
-              <input placeholder="Enter your email "></input>
+              <input
+                placeholder="Enter your email"
+                onChange={emailHandler}
+              ></input>
 
               <div>
                 <span>Password </span>
                 <small className="forgot-pass"> Forgot Password?</small>
               </div>
-              <input placeholder="Enter your password" type="password"></input>
+              <input
+                placeholder="Enter your password"
+                type="password"
+                onChange={changeText}
+              ></input>
               <legend>Confirm Password</legend>
-              <input placeholder="Confirm password"></input>
+              <input
+                placeholder="Confirm password"
+                onChange={checkPassword}
+              ></input>
             </div>
 
             <div>
-              <Link to="/Products">
-                <button className="login-button">Login</button>
-              </Link>
-              <Link to="/home">
-                <button className="login-button-2">Login As Guest</button>
-              </Link>
-            </div>
+              <button className="login-button" onClick={changeTo}>
+                Login
+              </button>
 
+              <button
+                className="login-button-2"
+                onClick={() => {
+                  setIsLoggedIn((login) => !isLoggedIn);
+                  navigate("/Products", {
+                    replace: true,
+                  });
+                }}
+              >
+                Login As Guest
+              </button>
+            </div>
+            {answer && <p>Wrong Attempt!</p>}
             <p>
               Not a Member?
               <Link

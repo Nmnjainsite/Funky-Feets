@@ -52,8 +52,8 @@ export default function Cart() {
         <p>
           <span style={{ float: "left" }}>Items :</span>
           <span>
+            {" "}
             <BiRupee></BiRupee>
-            {totalPrice}
           </span>
         </p>
 
@@ -72,82 +72,85 @@ export default function Cart() {
       <div className="cart">
         {item.length > 0 &&
           item.map((item) => (
-            <ul className="wishlist-container">
-              <li className="wishlist-cart ">
-                <div className="img-col-1 ">
-                  <img
-                    src={item.img}
-                    className="cart-image"
-                    key={item.img}
-                  ></img>
-                  {/* <span style={{ float: "right" }}>
+            <div>
+              <span style={{ float: "right" }}>{totalPrice}</span>
+              <ul className="wishlist-container">
+                <li className="wishlist-cart ">
+                  <div className="img-col-1 ">
+                    <img
+                      src={item.img}
+                      className="cart-image"
+                      key={item.img}
+                    ></img>
+                    {/* <span style={{ float: "right" }}>
                  
                     <BsStar></BsStar> {item.rating.rate}/{item.rating.count}
                   </span> */}
-                </div>
-
-                <div className="wishlist-cart-typography">
-                  <div>
-                    <h3 key={item.description}> {item.description}</h3>
                   </div>
 
-                  <div>
-                    <h3 style={{ display: "inline" }} key={item.price}>
-                      <BiRupee></BiRupee>
-                      {item.price}
-                    </h3>
-                    <span
-                      style={{
-                        textDecoration: "line-through",
-                        margin: "0.3rem",
-                      }}
-                      key={item.original_price}
-                    >
-                      {" "}
-                      Rs.{item.original_price}
-                    </span>
-                    <span style={{ color: "green" }} key={item.discount}>
-                      ({item.discount}% off)
-                    </span>
+                  <div className="wishlist-cart-typography">
+                    <div>
+                      <h3 key={item.description}> {item.description}</h3>
+                    </div>
 
-                    <p style={{ fontWeight: "bold" }} key={item.color}>
-                      Colour: {item.color}
+                    <div>
+                      <h3 style={{ display: "inline" }} key={item.price}>
+                        <BiRupee></BiRupee>
+                        {item.price}
+                      </h3>
+                      <span
+                        style={{
+                          textDecoration: "line-through",
+                          margin: "0.3rem",
+                        }}
+                        key={item.original_price}
+                      >
+                        {" "}
+                        Rs.{item.original_price}
+                      </span>
+                      <span style={{ color: "green" }} key={item.discount}>
+                        ({item.discount}% off)
+                      </span>
+
+                      <p style={{ fontWeight: "bold" }} key={item.color}>
+                        Colour: {item.color}
+                      </p>
+                    </div>
+                    <p>
+                      <span style={{ margin: "0.3rem" }} key={item.qty}>
+                        {item.qty}
+                      </span>
+                      <button>+</button> <button>-</button>
                     </p>
                   </div>
+                </li>
+                <div className="tags">
                   <p>
-                    <span style={{ margin: "0.3rem" }} key={item.qty}>
-                      {item.qty}
-                    </span>
-                    <button>+</button> <button>-</button>
+                    <BsHeart
+                      onClick={() =>
+                        wishlistDispatch({
+                          type: "ADD_TO_WISHLIST",
+                          payload: item,
+                        })
+                      }
+                    ></BsHeart>
                   </p>
+                  <span>
+                    <BsXLg
+                      onClick={() => {
+                        dispatch({
+                          type: "REMOVE_FROM_CART",
+                          payload: item.id,
+                          payload1: item.price,
+                          payload2: item.original_price,
+                          payload3: item.original_price - item.price,
+                        });
+                      }}
+                    ></BsXLg>
+                  </span>
                 </div>
-              </li>
-              <div className="tags">
-                <p>
-                  <BsHeart
-                    onClick={() =>
-                      wishlistDispatch({
-                        type: "ADD_TO_WISHLIST",
-                        payload: item,
-                      })
-                    }
-                  ></BsHeart>
-                </p>
-                <span>
-                  <BsXLg
-                    onClick={() => {
-                      dispatch({
-                        type: "REMOVE_FROM_CART",
-                        payload: item.id,
-                        payload1: item.price,
-                        payload2: item.original_price,
-                        payload3: item.original_price - item.price,
-                      });
-                    }}
-                  ></BsXLg>
-                </span>
-              </div>
-            </ul>
+              </ul>
+            </div>
           ))}
       </div>
     </div>
