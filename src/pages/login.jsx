@@ -10,7 +10,7 @@ function Login() {
   const [userInput, setUserInput] = useState("");
   const [passwordCheck, setSize] = useState("");
   const [answer, setAnswer] = useState(false);
-  const [checkEmail, setEmail] = useState("");
+  // const [checkEmail, setEmail] = useState("");
 
   const { isLoggedIn, setIsLoggedIn } = useAuth();
   const navigate = useNavigate();
@@ -28,24 +28,32 @@ function Login() {
     setSize(passwordCheck);
   }
 
-  function emailHandler(event) {
-    const checkEmail = event.target.value;
-    setAnswer(false);
-    setEmail(checkEmail);
-  }
+  // function emailHandler(event) {
+  //   const checkEmail = event.target.value;
+  //   setAnswer(false);
+  //   setEmail(checkEmail);
+  // }
+
+  // function changeTo() {
+  //   if (checkEmail === userInput) {
+  //
+  //   } else {
+  //     setAnswer(true);
+  //   }
+  // }
 
   function changeTo() {
-    if (checkEmail === "adarshBalak@gmail.com") {
+    if (userInput === "6546") {
       navigate("/Products");
     } else {
+      setUserInput("");
       setAnswer(true);
     }
   }
-
   function changeTo() {
-    if (userInput === passwordCheck) {
+    if (passwordCheck === "4242") {
+      navigate("/Products");
     } else {
-      setUserInput("");
       setSize("");
       setAnswer(true);
     }
@@ -80,7 +88,7 @@ function Login() {
               <div style={{ marginTop: "0.8rem" }}>E-mail</div>
               <input
                 placeholder="Enter your email"
-                onChange={emailHandler}
+                onChange={checkPassword}
               ></input>
 
               <div>
@@ -92,11 +100,12 @@ function Login() {
                 type="password"
                 onChange={changeText}
               ></input>
-              <legend>Confirm Password</legend>
+              {/* <legend>Confirm Password</legend>
+
               <input
                 placeholder="Confirm password"
-                onChange={checkPassword}
-              ></input>
+                onChange=
+              ></input> */}
             </div>
 
             <div>

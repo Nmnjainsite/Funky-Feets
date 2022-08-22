@@ -42,7 +42,7 @@ function ProductCard({
         payload3: Number(original_price - price),
         payload2: Number(original_price),
         payload: Number(price),
-
+        payload4: Number(qty),
         payload1: {
           id: _id,
           name: name,
@@ -144,29 +144,6 @@ function ProductCard({
         )}
         <button
           className="product-cart-button"
-          // onClick={() =>
-          //   dispatch({
-          //     type: "even",
-
-          //     payload3: Number(original_price - price),
-          //     payload2: Number(original_price),
-          //     payload: Number(price),
-
-          //     payload1: {
-          //       id: _id,
-          //       name: name,
-          //       price: Number(price),
-          //       description: description,
-          //       best_seller: best_seller,
-          //       discount: discount,
-          //       original_price: original_price,
-          //       rating: rating,
-          //       img: img,
-          //       qty: Number(qty),
-          //       color: color,
-          //     },
-          //   })
-          // }
           onClick={() => cartHandler(_id, products)}
         >
           {isInCart ? "Go To Cart" : "Add To Cart"}

@@ -15,7 +15,7 @@ import "./cart.css";
 
 export default function Cart() {
   const [
-    { item, value, totalPrice, ogPrice, totalDiscount, orderTotal },
+    { item, value, totalPrice, ogPrice, totalDiscount, quantity },
     dispatch,
   ] = useItem();
 
@@ -25,6 +25,7 @@ export default function Cart() {
       <Nav />
 
       {value && <h1 style={{ textAlign: "center" }}> Total Item : {value}</h1>}
+
       <div className="cart-box">
         <div className="cart">
           {item.length > 0 &&
@@ -46,7 +47,10 @@ export default function Cart() {
                       </div>
 
                       <div>
-                        <h3 style={{ display: "inline" }} key={item.price}>
+                        <h3
+                          style={{ display: "inline", color: "red" }}
+                          key={item.price}
+                        >
                           <BiRupee></BiRupee>
                           {item.price}
                         </h3>
@@ -83,12 +87,31 @@ export default function Cart() {
                           Colour: {item.color}
                         </p>
                       </div>
-                      <p>
-                        <span style={{ margin: "0.3rem" }} key={item.qty}>
-                          {item.qty}
-                        </span>
-                        <button>+</button> <button>-</button>
-                      </p>
+
+                      <span style={{ margin: "0.3rem" }}>
+                        Quantity : {item.qty}
+                      </span>
+                      {/* <p>     <button
+                          onClick={() =>
+                            dispatch({
+                              type: "INCREASE_QTY",
+                              payload: Number(item.qty),
+                              payload: Number(item.price),
+                            })
+                          }
+                        >
+                          +
+                        </button>
+                        <button
+                          onClick={() =>
+                            dispatch({
+                              type: "DECREASE_QTY",
+                            })
+                          }
+                        >
+                          -
+                        </button>
+                      </p> */}
                     </div>
                   </li>
                   <div className="tags">
@@ -121,51 +144,50 @@ export default function Cart() {
             ))}
         </div>
         <div>
-          {ogPrice && (
-            <div className="total-item">
-              <h3 style={{ textAlign: "center" }}>Order Summary</h3>
-              <hr />
-              <p>
-                <span style={{ float: "left" }}>MRP :</span>
-                <span>
+          <div>
+            {ogPrice && (
+              <div className="total-item">
+                <h3 style={{ textAlign: "center" }}>Order Summary</h3>
+                <hr />
+                <p>
+                  <span style={{ float: "left" }}>MRP :</span>
+                  <span>
+                    <BiRupee></BiRupee>
+                    {ogPrice}
+                  </span>
+                </p>
+
+                <p>
+                  <span style={{ float: "left" }}>Discount :</span>
+                  <span>{totalDiscount}</span>
+                </p>
+                <p>
+                  <span style={{ float: "left" }}>Delivery :</span>
+                  <span>
+                    <BiRupee></BiRupee>99
+                  </span>
+                </p>
+                <p>
+                  <span style={{ float: "left" }}>Items :</span>
+                  <span>
+                    <BiRupee></BiRupee>
+                    {totalPrice}
+                  </span>
+                </p>
+                <h4 style={{ color: "red" }}>
+                  <span style={{ float: "left" }}>Order Total:</span>
                   <BiRupee></BiRupee>
-                  {ogPrice}
-                </span>
-              </p>
-
-              <p>
-                <span style={{ float: "left" }}>Discount :</span>
-                <span>{totalDiscount}</span>
-              </p>
-
-              <p>
-                <span style={{ float: "left" }}>Delivery :</span>
-                <span>
-                  <BiRupee></BiRupee>99
-                </span>
-              </p>
-
-              <p>
-                <span style={{ float: "left" }}>Items :</span>
-                <span>
-                  <BiRupee></BiRupee>
-                  {totalPrice}
-                </span>
-              </p>
-
-              <h4 style={{ color: "red" }}>
-                <span style={{ float: "left" }}>Order Total:</span>
-                <BiRupee></BiRupee>
-                {totalPrice + 99}
-              </h4>
-              <hr />
-              <div style={{ textAlign: "center" }}>
-                <Link to="/Wishlist">
-                  <button className="order-button">Place Your Order</button>
-                </Link>
+                  {totalPrice + 99}
+                </h4>
+                <hr />
+                <div style={{ textAlign: "center" }}>
+                  <Link to="/Wishlist">
+                    <button className="order-button">Place Your Order</button>
+                  </Link>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </div>
