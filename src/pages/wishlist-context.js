@@ -35,11 +35,11 @@ function wishlistFunction(wishlistState, wishlistAction) {
 
     case "REMOVE_FROM_WISHLIST":
       return {
-        ...state,
+        ...wishlistState,
         itemInWishlist: wishlistState.itemInWishlist.filter(
           (item) => item.id !== wishlistAction.payload
         ),
-        itemValue: wishlistState.itemInValue - 1,
+        itemValue: wishlistState.itemValue - 1,
       };
     case "CLEAR_WISHLIST":
       return {

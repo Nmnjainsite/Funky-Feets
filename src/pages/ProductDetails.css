@@ -5,7 +5,7 @@
 }
 
 .productDetails-img {
-  width: 80%;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,9 +22,8 @@
   background-color: grey;
   color: var(--background-color);
   border-radius: 0.2rem;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
   border: none;
-  margin: 0.5rem;
 }
 .see-all-button:hover {
   color: var(--primary-color);

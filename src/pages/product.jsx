@@ -18,32 +18,47 @@ import { ProductImg } from "./ProductImg";
 export default function Product() {
   const [
     {
-      ADIDAS,
-      PUMA,
-      SPARX,
-      AIR,
-      LIBERTY,
+      // ADIDAS,
+      // PUMA,
+      // SPARX,
+      // AIR,
+      // LIBERTY,
+      name,
       sortBy,
       searchValue,
       discount,
       categoryName,
       category,
+      getFastDelivery,
+      itemsInStocks,
+      bestSeller,
     },
     dispatchItem,
   ] = useFilter();
+
+  function inStockItem(
+    productList,
+    { getFastDelivery, itemsInStocks, bestSeller }
+  ) {
+    return productList
+      .filter(({ fast_delivery }) => (getFastDelivery ? fast_delivery : true))
+      .filter(({ best_seller }) => (bestSeller ? best_seller : true))
+
+      .filter(({ in_stocks }) => (itemsInStocks ? true : in_stocks));
+  }
 
   const genderItem = filterByGender(products, category);
   const categoryItem = filterByCategory(genderItem, categoryName);
   const discountItem = filterByDiscount(categoryItem, discount);
   const searchedData = searchData(discountItem, searchValue);
   const getSortedData = sortData(searchedData, sortBy);
-  const getFilterData = filterData(getSortedData, {
-    ADIDAS,
-    PUMA,
-    SPARX,
-    AIR,
-    LIBERTY,
+  const getItem = inStockItem(getSortedData, {
+    getFastDelivery,
+    itemsInStocks,
+    bestSeller,
   });
+
+  const getFilterData = filterData(getItem, name);
   return (
     <>
       <div className="App">

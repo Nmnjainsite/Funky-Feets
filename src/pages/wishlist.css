@@ -1,11 +1,11 @@
 .wishlist-box-container {
-  list-style: none;
-  margin: 2rem;
-  width: 95%;
   display: grid;
-
   grid-template-columns: repeat(5, 1fr);
   text-align: center;
+  list-style: none;
+  gap: 1rem;
+  width: 90%;
+  margin: 2rem;
 }
 .wishcard-container {
   color: var(--background-color);
@@ -18,8 +18,25 @@
   position: relative;
   font-family: "Lato", sans-serif;
   top: -1rem;
+  text-align: center;
 }
 
+.wishlist-cart-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  margin-top: -0.6rem;
+  border: none;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+}
+.wishlist-original-price {
+  display: inline;
+  text-decoration: line-through;
+  margin: 0.5rem;
+}
 .wish-img {
   width: 100%;
 }
@@ -28,6 +45,6 @@
   .wishlist-box-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 80%;
+    width: 90%;
   }
 }

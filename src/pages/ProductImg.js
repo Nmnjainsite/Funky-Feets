@@ -3,6 +3,7 @@ import {
   BsFillHeartFill,
   BsStar,
   BsHeart,
+  BsHammer,
 } from "react-icons/bs";
 import { useWishlist } from "./wishlist-context";
 import { Link } from "react-router-dom";

@@ -4,11 +4,12 @@ import { createContext, useReducer, useContext } from "react";
 const FilterContext = createContext();
 
 const initialState = {
-  ADIDAS: true,
-  PUMA: true,
-  SPARX: true,
-  AIR: true,
-  LIBERTY: true,
+  // ADIDAS: true,
+  // PUMA: true,
+  // SPARX: true,
+  // AIR: true,
+  // LIBERTY: true,
+  name: null,
   MALE: true,
   FEMALE: true,
   KIDS: true,
@@ -17,16 +18,20 @@ const initialState = {
   discount: null,
   categoryName: null,
   category: null,
+  itemsInStocks: true,
+  getFastDelivery: false,
+  bestSeller: false,
 };
 const FilterProvider = ({ children }) => {
   const [
     {
       state,
-      ADIDAS,
-      PUMA,
-      SPARX,
-      AIR,
-      LIBERTY,
+      // ADIDAS,
+      // PUMA,
+      // SPARX,
+      // AIR,
+      // LIBERTY,
+      name,
       MALE,
       FEMALE,
       KIDS,
@@ -35,6 +40,9 @@ const FilterProvider = ({ children }) => {
       discount,
       categoryName,
       category,
+      getFastDelivery,
+      itemsInStocks,
+      bestSeller,
     },
     dispatchItem,
   ] = useReducer(filterReducer, initialState);
@@ -44,11 +52,12 @@ const FilterProvider = ({ children }) => {
       value={[
         {
           state,
-          ADIDAS,
-          PUMA,
-          SPARX,
-          AIR,
-          LIBERTY,
+          // ADIDAS,
+          // PUMA,
+          // SPARX,
+          // AIR,
+          // LIBERTY,
+          name,
           MALE,
           FEMALE,
           KIDS,
@@ -57,6 +66,9 @@ const FilterProvider = ({ children }) => {
           discount,
           categoryName,
           category,
+          getFastDelivery,
+          itemsInStocks,
+          bestSeller,
         },
         dispatchItem,
       ]}
@@ -78,31 +90,42 @@ const filterReducer = (state, action) => {
       return { ...state, categoryName: action.payload };
     case "CATEGORY":
       return { ...state, category: action.payload };
-    case "SHOES":
-      return { ...state, ADIDAS: !state.ADIDAS };
-    case "Puma":
-      return { ...state, PUMA: !state.PUMA };
-    case "Sparx":
-      return { ...state, SPARX: !state.SPARX };
-    case "Liberty":
-      return { ...state, LIBERTY: !state.LIBERTY };
-    case "MAX":
-      return { ...state, AIR: !state.AIR };
+    case "NAME":
+      return { ...state, name: action.payload };
+    case "item_stocks":
+      return { ...state, itemsInStocks: !state.itemsInStocks };
+    case "item_delivery":
+      return { ...state, getFastDelivery: !state.getFastDelivery };
+    case "best_seller":
+      return { ...state, bestSeller: !state.bestSeller };
+    // case "get_categories":
+    //   return { ...state, getCategories: !state.getCategories };
+    // case "get_sneakers":
+    //   return { ...state, getSneakers: !state.getSneakers };
+    // case "SHOES":
+    //   return { ...state, ADIDAS: !state.ADIDAS };
+    // case "Puma":
+    //   return { ...state, PUMA: !state.PUMA };
+    // case "Sparx":
+    //   return { ...state, SPARX: !state.SPARX };
+    // case "Liberty":
+    //   return { ...state, LIBERTY: !state.LIBERTY };
+    // case "MAX":
+    //   return { ...state, AIR: !state.AIR };
     case "CLEAR":
       return {
-        ADIDAS: [],
-        PUMA: [],
-        SPARX: [],
-        AIR: [],
-        LIBERTY: [],
-        MALE: [],
-        FEMALE: [],
-        KIDS: [],
-        sortBy: [],
+        name: null,
+        MALE: true,
+        FEMALE: true,
+        KIDS: true,
+        sortBy: null,
         searchValue: null,
-        discount: [],
-        categoryName: [],
-        category: [],
+        discount: null,
+        categoryName: null,
+        category: null,
+        itemsInStocks: true,
+        getFastDelivery: false,
+        bestSeller: false,
       };
     default:
       return state;

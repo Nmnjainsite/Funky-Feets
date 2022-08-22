@@ -1,15 +1,16 @@
 import { useFilter } from "./filter-context";
 import { useItem } from "./item-context";
-
+import { GiHamburgerMenu } from "react-icons/gi";
 const FilterBar = () => {
   const [{ value }, dispatch] = useItem();
   const [
     {
-      ADIDAS,
-      PUMA,
-      SPARX,
-      AIR,
-      LIBERTY,
+      // ADIDAS,
+      // PUMA,
+      // SPARX,
+      // AIR,
+      // LIBERTY,
+      name,
       sortBy,
       searchValue,
       discount,
@@ -22,20 +23,64 @@ const FilterBar = () => {
   return (
     <div className="left-bar">
       <span
-        style={{ color: "grey", cursor: "pointer", fontSize: "0.8rem" }}
+        style={{ color: "red", cursor: "pointer", fontSize: "0.8rem" }}
         onClick={() => dispatchItem({ type: "CLEAR" })}
       >
-        Remove all filters
+        Delete all filters
       </span>
       <p className="nav-heading">Filter </p>
-      <p className="nav-heading">Rating</p>
+      {/* <p className="nav-heading">Rating</p>
       <input
         type="range"
         min="1"
-        max="50"
-        value="50"
-        onChange={(e) => dispatchItem({ type: "sort", payload: "high-rating" })}
-      ></input>
+        max="5"
+        defaultValue="1"
+        onChange={(e) =>
+          dispatchItem({ type: "sort", payload: e.target.value })
+        }
+      ></input> */}
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            onChange={() => dispatchItem({ type: "item_stocks" })}
+          />
+          In Stocks
+        </label>
+        <div>
+          {" "}
+          <label>
+            <input
+              type="checkbox"
+              onChange={() => dispatchItem({ type: "item_delivery" })}
+            />
+            Fast Delivery
+          </label>
+        </div>
+        <label>
+          <input
+            type="checkbox"
+            onChange={() => dispatchItem({ type: "best_seller" })}
+          />
+          Best Seller
+        </label>
+        {/* <div>
+          <label>
+            <input
+              type="checkbox"
+              onChange={() => dispatchItem({ type: "get_categories" })}
+            />
+            Casuals
+          </label>
+        </div>
+        <label>
+          <input
+            type="checkbox"
+            onChange={() => dispatchItem({ type: "get_sneakers" })}
+          />
+          Sneakers
+        </label> */}
+      </div>
       <p className="nav-heading">Categories</p>
       <label>
         <input
@@ -72,7 +117,7 @@ const FilterBar = () => {
             type="checkbox"
             value="adidas"
             name="producer"
-            onChange={() => dispatchItem({ type: "SHOES" })}
+            onChange={() => dispatchItem({ type: "NAME", payload: "ADIDAS" })}
           />
           adidas
         </label>{" "}
@@ -81,7 +126,7 @@ const FilterBar = () => {
             type="checkbox"
             value="air max"
             name="producer"
-            onChange={() => dispatchItem({ type: "MAX" })}
+            onChange={() => dispatchItem({ type: "NAME", payload: "AIR" })}
           />
           Air Max
         </label>
@@ -90,7 +135,7 @@ const FilterBar = () => {
             type="checkbox"
             value="sparx"
             name="producer"
-            onChange={() => dispatchItem({ type: "Sparx" })}
+            onChange={() => dispatchItem({ type: "NAME", payload: "SPARX" })}
           />
           Sparx
         </label>
@@ -99,7 +144,7 @@ const FilterBar = () => {
             type="checkbox"
             value="puma"
             name="producer"
-            onChange={() => dispatchItem({ type: "Puma" })}
+            onChange={() => dispatchItem({ type: "NAME", payload: "PUMA" })}
           />
           Puma
         </label>
@@ -108,7 +153,7 @@ const FilterBar = () => {
             type="checkbox"
             value="liberty"
             name="producer"
-            onChange={() => dispatchItem({ type: "Liberty" })}
+            onChange={() => dispatchItem({ type: "NAME", payload: "LIBERTY" })}
           />
           Liberty
         </label>

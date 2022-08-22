@@ -1,5 +1,5 @@
 export function sortData(products, sortBy) {
-  if (sortBy === "default") {
+  if (sortBy === "DEFAULT") {
     return products;
   }
   if (sortBy === "low-price") {

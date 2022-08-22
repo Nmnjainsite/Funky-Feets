@@ -1,8 +1,20 @@
-export function filterData(products, { ADIDAS, PUMA, SPARX, AIR, LIBERTY }) {
-  return products
-    .filter((products) => (products.name === "adidas" ? true : ADIDAS))
-    .filter((products) => (products.name === "Puma" ? true : PUMA))
-    .filter((products) => (products.name === "Sparx" ? true : SPARX))
-    .filter((products) => (products.name === "Air Max" ? true : AIR))
-    .filter((products) => (products.name === "Liberty" ? true : LIBERTY));
+// export function filterData(products, { ADIDAS, PUMA, SPARX, AIR, LIBERTY }) {
+//   return;
+// }
+
+export function filterData(products, name) {
+  switch (name) {
+    case "ADIDAS":
+      return products.filter((products) => products.name === "adidas");
+    case "PUMA":
+      return products.filter((products) => products.name === "Puma");
+    case "SPARX":
+      return products.filter((products) => products.name === "Sparx");
+    case "AIR":
+      return products.filter((products) => products.name === "Air Max");
+    case "LIBERTY":
+      return products.filter((products) => products.name === "Liberty");
+    default:
+      return products;
+  }
 }

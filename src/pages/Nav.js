@@ -37,7 +37,7 @@ function Nav() {
           <Link to="/Wishlist" style={{ color: "white" }}>
             <BsFillHeartFill></BsFillHeartFill>
           </Link>
-          <div className="number-2">{itemValue} </div>
+          <div className="number-2">{itemValue}</div>
         </div>
         <div className="right-nav">
           Hi,User

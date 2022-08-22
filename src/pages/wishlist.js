@@ -6,6 +6,7 @@ import {
   BsFillHeartFill,
   BsStar,
   BsHeart,
+  BsX,
 } from "react-icons/bs";
 import { BiRupee } from "react-icons/bi";
 import { Link } from "react-router-dom";
@@ -23,6 +24,15 @@ function Wishlist() {
         {itemInWishlist &&
           itemInWishlist.map((itemInWishlist) => (
             <li className="wishcard-container">
+              <BsX
+                className="card-wishlist-emoji"
+                onClick={() => {
+                  wishlistDispatch({
+                    type: "REMOVE_FROM_WISHLIST",
+                    payload: itemInWishlist.id,
+                  });
+                }}
+              />
               <div className="img-box">
                 {itemInWishlist.best_seller && (
                   <span className="new-tag">Best Seller</span>
@@ -39,31 +49,29 @@ function Wishlist() {
                 </span>
               </div>
               <div className="wish-card-typography">
-                <h3 key={itemInWishlist.name}>{itemInWishlist.name}</h3>
-                <small
-                  style={{ color: "grey", margin: "-2rem" }}
+                <h3 style={{ textAlign: "left" }} key={itemInWishlist.name}>
+                  {itemInWishlist.name}
+                </h3>
+                <div
+                  style={{ color: "#374151", marginTop: "-0.8rem" }}
                   key={itemInWishlist.description}
                 >
                   {itemInWishlist.description}
-                </small>
+                </div>
                 <p>
                   <h3
-                    style={{
-                      display: "inline",
-                    }}
+                    style={{ marginTop: "-0.5rem" }}
+                    className="product-price"
                     key={itemInWishlist.price}
                   >
                     <BiRupee></BiRupee> {itemInWishlist.price}
                   </h3>
 
                   <span
-                    style={{
-                      textDecoration: "line-through",
-                      margin: "0.4rem",
-                    }}
+                    className="wishlist-original-price"
                     key={itemInWishlist.original_price}
                   >
-                    MRP Rs.
+                    Rs.
                     {itemInWishlist.original_price}
                   </span>
 
@@ -74,25 +82,24 @@ function Wishlist() {
                     ({itemInWishlist.discount} % off)
                   </span>
                 </p>
-                <Link to="/Cart">
-                  <button
-                    className="product-cart-button"
-                    onClick={() =>
-                      dispatch({
-                        type: "even",
-                        payload3: Number(
-                          itemInWishlist.original_price - itemInWishlist.price
-                        ),
-                        payload2: Number(itemInWishlist.original_price),
-                        payload: Number(itemInWishlist.price),
-                        payload1: itemInWishlist,
-                      })
-                    }
-                  >
-                    Add To Cart
-                    <BsFillCartFill></BsFillCartFill>
-                  </button>
-                </Link>
+
+                <button
+                  className="wishlist-cart-button"
+                  onClick={() =>
+                    dispatch({
+                      type: "even",
+                      payload3: Number(
+                        itemInWishlist.original_price - itemInWishlist.price
+                      ),
+                      payload2: Number(itemInWishlist.original_price),
+                      payload: Number(itemInWishlist.price),
+                      payload1: itemInWishlist,
+                    })
+                  }
+                >
+                  Add To Cart
+                  <BsFillCartFill></BsFillCartFill>
+                </button>
               </div>
             </li>
           ))}

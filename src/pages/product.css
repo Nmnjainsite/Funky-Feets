@@ -14,9 +14,7 @@
 
 .product-price {
   color: red;
-  margin: 0.2rem;
-  margin-top: -0.6rem;
-  display: block;
+  margin-top: -1rem;
 }
 .product-logo {
   display: none;
@@ -77,11 +75,25 @@ input {
   border-radius: 0.4rem;
   margin-top: -0.6rem;
   border: none;
+
   background-color: var(--background-color);
   color: var(--primary-color);
   font-size: 1.1rem;
   cursor: pointer;
   font-family: "Lato", sans-serif;
+}
+
+.view-details-btn {
+  font-size: 0.8rem;
+  border: none;
+  text-decoration: none;
+  background-color: #374151;
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  position: relative;
+  top: 1rem;
 }
 
 .product-cart-button:hover {
@@ -141,7 +153,8 @@ input {
     font-size: 0.6rem;
   }
   .price-filter {
-    margin-top: 4rem;
+    position: relative;
+    top: 2rem;
     margin-right: 2rem;
     width: 30%;
   }
@@ -155,6 +168,11 @@ input {
   input {
     position: relative;
     right: 1rem;
+  }
+  .product-price {
+    color: red;
+    margin-top: -0.5rem;
+    display: block;
   }
 }
 
