@@ -1,6 +1,6 @@
 import { Footer } from "./footer";
 import { LoginNav } from "./login-nav";
-import signIn from "./signIn.svg";
+import signIn from "../assets/signIn.svg";
 import { Link } from "react-router-dom";
 import "./signup.css";
 const SignUp = () => {

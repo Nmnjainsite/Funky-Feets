@@ -1,9 +1,9 @@
 import React from "react";
 import "./login.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useAuth } from "./auth-context";
+import { useAuth } from "../context/auth-context";
 import { Footer } from "./footer";
-import funky from "./funky.jpg";
+import funky from "../assets/funky.jpg";
 import { LoginNav } from "./login-nav";
 import { useState } from "react";
 function Login() {

@@ -1,5 +1,5 @@
-import { useFilter } from "./filter-context";
-import { useItem } from "./item-context";
+import { useFilter } from "../context/filter-context";
+import { useItem } from "../context/item-context";
 import { GiHamburgerMenu } from "react-icons/gi";
 const FilterBar = () => {
   const [{ value }, dispatch] = useItem();

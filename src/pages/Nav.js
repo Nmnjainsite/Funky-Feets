@@ -1,10 +1,10 @@
-import { useFilter } from "./filter-context";
-import { useItem } from "./item-context";
-import { Wishlist } from "./wishlist";
+import { useFilter } from "../context/filter-context";
+import { useItem } from "../context/item-context";
+
 import { Link } from "react-router-dom";
 import { BsFillCartFill, BsFillHeartFill } from "react-icons/bs";
-import { useWishlist } from "./wishlist-context";
-import { useAuth } from "./auth-context";
+import { useWishlist } from "../context/wishlist-context";
+import { useAuth } from "../context/auth-context";
 function Nav() {
   const [{ value }] = useItem();
   const [{ searchValue }, dispatchItem] = useFilter();

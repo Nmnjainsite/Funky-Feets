@@ -5,7 +5,7 @@ import {
   BsHeart,
   BsHammer,
 } from "react-icons/bs";
-import { useWishlist } from "./wishlist-context";
+import { useWishlist } from "../context/wishlist-context";
 import { Link } from "react-router-dom";
 function ProductImg({
   best_seller,

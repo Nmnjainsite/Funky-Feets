@@ -5,10 +5,10 @@ import App from "./App";
 import { makeServer } from "./server";
 
 import { BrowserRouter } from "react-router-dom";
-import { ItemProvider } from "./pages/item-context";
-import { FilterProvider } from "./pages/filter-context";
-import { WishlistProvider } from "./pages/wishlist-context";
-import { AuthProvider } from "./pages/auth-context";
+import { ItemProvider } from "./context/item-context";
+import { FilterProvider } from "./context/filter-context";
+import { WishlistProvider } from "./context/wishlist-context";
+import { AuthProvider } from "./context/auth-context";
 // Call make Server
 makeServer();
 

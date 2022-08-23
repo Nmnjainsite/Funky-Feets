@@ -50,19 +50,19 @@ function itemFunction(state, action) {
         ogPrice: state.ogPrice + action.payload2,
         totalDiscount: state.totalDiscount + action.payload3,
       };
-    case "INCREASE_QTY":
-      return {
-        ...state,
-        quantity: state.quantity + action.payload,
-        totalPrice: state.totalPrice + action.payload1,
-        ogPrice: state.ogPrice + action.payload2,
-        totalDiscount: state.totalDiscount + action.payload3,
-      };
-    case "DECREASE_QTY":
-      return {
-        ...state,
-        quantity: state.quantity - 1,
-      };
+    // case "INCREASE_QTY":
+    //   return {
+    //     ...state,
+    //     quantity: state.quantity + action.payload,
+    //     totalPrice: state.totalPrice + action.payload1,
+    //     ogPrice: state.ogPrice + action.payload2,
+    //     totalDiscount: state.totalDiscount + action.payload3,
+    //   };
+    // case "DECREASE_QTY":
+    //   return {
+    //     ...state,
+    //     quantity: state.quantity - 1,
+    //   };
     case "REMOVE_FROM_CART":
       return {
         ...state,

@@ -4,8 +4,8 @@ import {
   BsStar,
   BsHeart,
 } from "react-icons/bs";
-import { useWishlist } from "./wishlist-context";
-import { useItem } from "./item-context";
+import { useWishlist } from "../context/wishlist-context";
+import { useItem } from "../context/item-context";
 import { BiRupee } from "react-icons/bi";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./product.css";
@@ -42,7 +42,7 @@ function ProductCard({
         payload3: Number(original_price - price),
         payload2: Number(original_price),
         payload: Number(price),
-        payload4: Number(qty),
+
         payload1: {
           id: _id,
           name: name,

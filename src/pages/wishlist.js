@@ -1,6 +1,6 @@
 import React from "react";
 import "./product.css";
-import { useWishlist } from "./wishlist-context";
+import { useWishlist } from "../context/wishlist-context";
 import {
   BsFillCartFill,
   BsFillHeartFill,
@@ -9,10 +9,9 @@ import {
   BsX,
 } from "react-icons/bs";
 import { BiRupee } from "react-icons/bi";
-import { Link } from "react-router-dom";
 import { Nav } from "./Nav";
 import "./wishlist.css";
-import { useItem } from "./item-context";
+import { useItem } from "../context/item-context";
 function Wishlist() {
   const [{ itemInWishlist }, wishlistDispatch] = useWishlist();
   const [{ item }, dispatch] = useItem();

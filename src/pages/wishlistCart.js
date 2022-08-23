@@ -1,7 +1,6 @@
-import { useWishlist } from "./wishlist-context";
+import { useWishlist } from "../context/wishlist-context";
 import { findArray } from "../backend/utils/find";
 import { useNavigate } from "react-router-dom";
-import { products } from "../backend/db/products";
 import { BsCart, BsStar, BsX } from "react-icons/bs";
 
 const WishlistCardView = ({ products }) => {

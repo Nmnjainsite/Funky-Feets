@@ -8,9 +8,9 @@ import {
 } from "react-icons/bs";
 import { BiRupee } from "react-icons/bi";
 import { Link, useParams } from "react-router-dom";
-import { useItem } from "./item-context";
+import { useItem } from "../context/item-context";
 import { Nav } from "./Nav";
-import { useWishlist } from "./wishlist-context";
+import { useWishlist } from "../context/wishlist-context";
 import "./cart.css";
 
 export default function Cart() {
@@ -70,7 +70,6 @@ export default function Cart() {
                         <p
                           style={{
                             display: "block",
-
                             color: "white",
                             backgroundColor: "green",
                             width: "2.5rem",
