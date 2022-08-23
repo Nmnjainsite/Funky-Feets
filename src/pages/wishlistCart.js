@@ -1,5 +1,5 @@
 import { useWishlist } from "../context/wishlist-context";
-import { findArray } from "../backend/utils/find";
+import { findArray } from "../utils/find";
 import { useNavigate } from "react-router-dom";
 import { BsCart, BsStar, BsX } from "react-icons/bs";
 

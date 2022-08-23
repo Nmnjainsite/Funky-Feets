@@ -9,7 +9,7 @@ import { useItem } from "../context/item-context";
 import { BiRupee } from "react-icons/bi";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./product.css";
-import { findArray } from "../backend/utils/find";
+import { findArray } from "../utils/find";
 import { products } from "../backend/db/products";
 function ProductCard({
   _id,

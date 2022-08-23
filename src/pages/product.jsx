@@ -5,12 +5,12 @@ import { FilterBar } from "./filter-bar";
 import { SortBar } from "./sort-bar";
 import { ProductCard } from "./ProductCard";
 import { products } from "../backend/db/products";
-import { searchData } from "../backend/utils/searchData";
-import { sortData } from "../backend/utils/sortData";
-import { filterData } from "../backend/utils/filterByTitle";
-import { filterByGender } from "../backend/utils/filterByGender";
-import { filterByCategory } from "../backend/utils/filterByCategories";
-import { filterByDiscount } from "../backend/utils/filterByDiscount";
+import { searchData } from "../utils/searchData";
+import { sortData } from "../utils/sortData";
+import { filterData } from "../utils/filterByTitle";
+import { filterByGender } from "../utils/filterByGender";
+import { filterByCategory } from "../utils/filterByCategories";
+import { filterByDiscount } from "../utils/filterByDiscount";
 import { useFilter } from "../context/filter-context";
 import { ProductImg } from "./ProductImg";
 export default function Product() {
