@@ -24,7 +24,9 @@ export default function Cart() {
     <div>
       <Nav />
 
-      {value && <h1 style={{ textAlign: "center" }}> Total Item : {value}</h1>}
+      {value > 0 && (
+        <h1 style={{ textAlign: "center" }}> Total Item : {value}</h1>
+      )}
 
       <div className="cart-box">
         <div className="cart">
@@ -144,7 +146,7 @@ export default function Cart() {
         </div>
         <div>
           <div>
-            {ogPrice && (
+            {ogPrice > 0 && (
               <div className="total-item">
                 <h3 style={{ textAlign: "center" }}>Order Summary</h3>
                 <hr />

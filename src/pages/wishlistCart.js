@@ -23,7 +23,7 @@ const WishlistCardView = ({ products }) => {
   const navigate = useNavigate();
 
   const isInCart = findArray(_id, wishlistState.itemsInWishlist);
-  const cartHandler = (products) => {
+  const cartHandler = (_id, products) => {
     if (isInCart) {
       navigate("/Cart");
     } else {
@@ -70,7 +70,7 @@ const WishlistCardView = ({ products }) => {
         </div>
       </div>
       <div>
-        <button onClick={() => cartHandler(products)}>
+        <button onClick={() => cartHandler(_id, products)}>
           {isInCart ? "Go To Cart" : "Move to Cart"}
           <BsCart size="2rem" />
         </button>
