@@ -1,7 +1,4 @@
-// export function filterData(products, { ADIDAS, PUMA, SPARX, AIR, LIBERTY }) {
-//   return;
-// }
-
+import React from "react";
 export function filterData(products, name) {
   switch (name) {
     case "ADIDAS":

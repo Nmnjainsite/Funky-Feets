@@ -6,6 +6,7 @@ import { Footer } from "./footer";
 import funky from "../assets/funky.jpg";
 import { LoginNav } from "./login-nav";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 function Login() {
   const [userInput, setUserInput] = useState("");
   const [passwordCheck, setSize] = useState("");
@@ -28,20 +29,6 @@ function Login() {
     setSize(passwordCheck);
   }
 
-  // function emailHandler(event) {
-  //   const checkEmail = event.target.value;
-  //   setAnswer(false);
-  //   setEmail(checkEmail);
-  // }
-
-  // function changeTo() {
-  //   if (checkEmail === userInput) {
-  //
-  //   } else {
-  //     setAnswer(true);
-  //   }
-  // }
-
   function changeTo() {
     if (userInput === "6546") {
       navigate("/Products");
@@ -62,6 +49,7 @@ function Login() {
     <>
       <section>
         <LoginNav />
+
         <div className="login-container">
           <div className="login-box">
             <div className="login-col-1">
@@ -119,6 +107,10 @@ function Login() {
                   setIsLoggedIn((login) => !isLoggedIn);
                   navigate("/Products", {
                     replace: true,
+                  });
+                  toast.success("🦄 Login Successfull !", {
+                    position: "top-center",
+                    autoClose: 1000,
                   });
                 }}
               >

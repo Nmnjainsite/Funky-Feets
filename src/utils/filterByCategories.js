@@ -1,4 +1,4 @@
-import { BiZoomIn } from "react-icons/bi";
+import React from "react";
 
 export const filterByCategory = (products, categoryName) => {
   switch (categoryName) {
@@ -9,7 +9,7 @@ export const filterByCategory = (products, categoryName) => {
       return products.filter(
         (products) => products.categoryName === "sneakers"
       );
-      BiZoomIn;
+
     case "SPORTS":
       return products.filter((products) => products.categoryName === "sports");
     case "FORMALS":

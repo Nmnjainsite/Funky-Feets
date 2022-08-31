@@ -1,3 +1,5 @@
+import React from "react";
+
 export function sortData(products, sortBy) {
   if (sortBy === "DEFAULT") {
     return products;

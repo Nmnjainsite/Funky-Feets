@@ -3,8 +3,9 @@ import { ProductCard } from "./ProductCard";
 import { products } from "../backend/db/products";
 import { Nav } from "./Nav";
 import { Footer } from "./footer";
-import { ProductImg } from "./ProductImg";
 import "./ProductDetails.css";
+import SingleProductCard from "./SingleProductCard";
+import React from "react";
 function ProductDetails() {
   const { productId } = useParams();
   function getProductDetails(products, productId) {
@@ -15,16 +16,8 @@ function ProductDetails() {
   return (
     <>
       <Nav />
-      <div className="productDetails-container">
-        <div className="productDetails-img">
-          <ProductImg {...data} />
-        </div>
-        <div className="productDetails-typo">
-          <ProductCard {...data} />
-          <Link to="/Products" className="see-all-button">
-            See All
-          </Link>
-        </div>
+      <div>
+        <SingleProductCard products={data} />
       </div>
 
       <Footer />

@@ -3,6 +3,7 @@ import { LoginNav } from "./login-nav";
 import signIn from "../assets/signIn.svg";
 import { Link } from "react-router-dom";
 import "./signup.css";
+import React from "react";
 const SignUp = () => {
   return (
     <>
@@ -14,8 +15,6 @@ const SignUp = () => {
             <h3>Fill Your Details</h3>
             <hr />
             <legend>First Name</legend>
-            <input></input>
-            <legend>Middle Name</legend>
             <input></input>
             <legend>Last Name</legend>
             <input></input>

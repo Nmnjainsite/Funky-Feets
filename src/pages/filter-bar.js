@@ -1,6 +1,7 @@
 import { useFilter } from "../context/filter-context";
 import { useItem } from "../context/item-context";
 import { GiHamburgerMenu } from "react-icons/gi";
+import React from "react";
 const FilterBar = () => {
   const [{ value }, dispatch] = useItem();
   const [
@@ -26,7 +27,7 @@ const FilterBar = () => {
         style={{ color: "red", cursor: "pointer", fontSize: "0.8rem" }}
         onClick={() => dispatchItem({ type: "CLEAR" })}
       >
-        Delete all filters
+        Clear all filters
       </span>
       <p className="nav-heading">Filter </p>
       {/* <p className="nav-heading">Rating</p>

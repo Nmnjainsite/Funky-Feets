@@ -1,15 +1,16 @@
 import { useFilter } from "../context/filter-context";
 import { useItem } from "../context/item-context";
-
 import { Link } from "react-router-dom";
 import { BsFillCartFill, BsFillHeartFill } from "react-icons/bs";
 import { useWishlist } from "../context/wishlist-context";
 import { useAuth } from "../context/auth-context";
+import React from "react";
 function Nav() {
-  const [{ value }] = useItem();
+  const [{ item }] = useItem();
   const [{ searchValue }, dispatchItem] = useFilter();
-  const [{ itemValue }] = useWishlist();
+  const { wishlistState } = useWishlist();
   const { isLoggedIn } = useAuth();
+
   return (
     <>
       <div className="title-container">
@@ -31,13 +32,13 @@ function Nav() {
           <Link to="/Cart" style={{ color: "white" }}>
             <BsFillCartFill></BsFillCartFill>
           </Link>
-          <div className="number">{value}</div>
+          <div className="number">{item.length}</div>
         </div>
         <div className="badge-icons-2">
           <Link to="/Wishlist" style={{ color: "white" }}>
             <BsFillHeartFill></BsFillHeartFill>
           </Link>
-          <div className="number-2">{itemValue}</div>
+          <div className="number-2">{wishlistState.itemInWishlist.length}</div>
         </div>
         <div className="right-nav">
           Hi,User

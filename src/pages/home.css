@@ -150,11 +150,15 @@
 }
 .description {
   width: 80%;
-  font-size: 1rem;
+  font-size: 1.3rem;
   position: relative;
   text-align: center;
   margin: 1rem;
   font-family: "Lato", sans-serif;
+}
+
+.description::first-letter {
+  color: var(--secondary-color);
 }
 #btn {
   border: none;
@@ -294,7 +298,7 @@
   padding: 0.5rem;
   border-radius: 0.3rem;
   cursor: pointer;
-  width: 50%;
+  width: 70%;
 }
 
 .add-to-cart:hover {
@@ -318,9 +322,9 @@
 
 /* -----------media query for mobiles---------- */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 820px) {
   .right-nav {
-    margin-right: 2rem;
+    margin-right: 0rem;
   }
 
   .title {
@@ -344,18 +348,18 @@
   }
   .badge-icons {
     font-size: 1.5rem;
-    right: 0.5rem;
+    right: -0.8rem;
     top: 2rem;
   }
 
   .badge-icons-2 {
-    right: 1.8rem;
+    right: 0.5rem;
     font-size: 1.5rem;
     top: 0.7rem;
   }
 
   .input {
-    width: 5rem;
+    width: 90%;
   }
 
   .description-container {

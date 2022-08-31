@@ -1,3 +1,5 @@
+import React from "react";
+
 export function filterByGender(products, category) {
   switch (category) {
     case "MALE":

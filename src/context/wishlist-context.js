@@ -1,21 +1,20 @@
 import { createContext, useContext, useReducer } from "react";
-
+import React from "react";
 const WishlistContext = createContext(null);
 const useWishlist = () => useContext(WishlistContext);
 
 const initialState = {
   itemInWishlist: [],
-  itemValue: 0,
 };
 
 function WishlistProvider({ children }) {
-  const [{ wishlistState, itemInWishlist, itemValue }, wishlistDispatch] =
-    useReducer(wishlistFunction, initialState);
+  const [wishlistState, wishlistDispatch] = useReducer(
+    wishlistFunction,
+    initialState
+  );
 
   return (
-    <WishlistContext.Provider
-      value={[{ wishlistState, itemValue, itemInWishlist }, wishlistDispatch]}
-    >
+    <WishlistContext.Provider value={{ wishlistState, wishlistDispatch }}>
       {children}
     </WishlistContext.Provider>
   );
@@ -30,24 +29,21 @@ function wishlistFunction(wishlistState, wishlistAction) {
           ...wishlistState.itemInWishlist,
           wishlistAction.payload,
         ],
-        itemValue: wishlistState.itemValue + 1,
       };
 
     case "REMOVE_FROM_WISHLIST":
       return {
         ...wishlistState,
         itemInWishlist: wishlistState.itemInWishlist.filter(
-          (item) => item.id !== wishlistAction.payload
+          (item) => item._id !== wishlistAction.payload
         ),
-        itemValue: wishlistState.itemValue - 1,
       };
     case "CLEAR_WISHLIST":
       return {
         itemInWishlist: [],
-        itemValue: 0,
       };
     default:
-      return state;
+      return wishlistState;
   }
 }
 

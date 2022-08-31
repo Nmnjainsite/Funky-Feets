@@ -4,11 +4,6 @@ import { createContext, useReducer, useContext } from "react";
 const FilterContext = createContext();
 
 const initialState = {
-  // ADIDAS: true,
-  // PUMA: true,
-  // SPARX: true,
-  // AIR: true,
-  // LIBERTY: true,
   name: null,
   MALE: true,
   FEMALE: true,
@@ -26,11 +21,6 @@ const FilterProvider = ({ children }) => {
   const [
     {
       state,
-      // ADIDAS,
-      // PUMA,
-      // SPARX,
-      // AIR,
-      // LIBERTY,
       name,
       MALE,
       FEMALE,
@@ -52,11 +42,6 @@ const FilterProvider = ({ children }) => {
       value={[
         {
           state,
-          // ADIDAS,
-          // PUMA,
-          // SPARX,
-          // AIR,
-          // LIBERTY,
           name,
           MALE,
           FEMALE,

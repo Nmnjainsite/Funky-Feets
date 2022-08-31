@@ -1,3 +1,5 @@
+import React from "react";
+
 export const filterByDiscount = (products, discount) => {
   switch (discount) {
     case "ABOVE_10":

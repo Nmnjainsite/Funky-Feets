@@ -1,5 +1,5 @@
 import { BsGithub, BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
-
+import React from "react";
 const Footer = () => {
   return (
     <footer className="footer">

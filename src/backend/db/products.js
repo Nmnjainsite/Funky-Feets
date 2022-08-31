@@ -46,14 +46,14 @@ export const products = [
     best_seller: false,
     original_price: 899,
     discount: 10,
-    img: "https://images.sportsdirect.com/images/products/21125169_3pl.jpg",
+    img: "https://m.media-amazon.com/images/I/516Jl-Ok27L._UL1100_.jpg",
     categoryName: "sports",
   },
 
   {
     _id: uuid(),
-    name: "Puma",
-    description: "Puma Shoes, Fast Cat Sneakers ",
+    name: "Air Max",
+    description: "Air  Max, Fast Cat Sneakers ",
     price: 1649,
     qty: 1,
     category: "male",
@@ -67,7 +67,7 @@ export const products = [
     best_seller: true,
     original_price: 2499,
     discount: 40,
-    img: "https://i.pinimg.com/originals/b7/a6/76/b7a676d97d2cb1057158a228b2a724cf.jpg",
+    img: "https://media.kohlsimg.com/is/image/kohls/4228758_White_Black_Platinum?wid=600&hei=600&op_sharpen=1",
     categoryName: "sneakers",
   },
   {
@@ -87,7 +87,7 @@ export const products = [
     best_seller: true,
     original_price: 1199,
     discount: 10,
-    img: "	https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1610382629-air-max-iii-mens-shoe-lxZhs3.jpg",
+    img: "	https://manofmany.com/wp-content/uploads/2021/03/silver-surfer-best-air-max-90-of-all-time.png",
     categoryName: "casual",
   },
   {
@@ -154,7 +154,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Liberty",
-    description: "Liberty Formal Shoes For Man",
+    description: "Liberty          Formal Shoes For Man",
     price: 1059,
     qty: 1,
     category: "male",
@@ -174,7 +174,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Liberty",
-    description: "Liberty Formal Shoes For Woman",
+    description: "Liberty    Formal Shoes For Woman",
     price: 1349,
     qty: 1,
     category: "female",
@@ -194,7 +194,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Puma",
-    description: "Black Formal Shoes For Kids",
+    description: "Black      Formal Shoes For Kids",
     price: 675,
     qty: 1,
     category: "kids",
@@ -215,7 +215,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Sparx",
-    description: "Sparx Sport Shoes For Women",
+    description: "Sparx       Sport Shoes For Women",
     price: 779,
     qty: 1,
     category: "female",
@@ -331,14 +331,14 @@ export const products = [
     best_seller: true,
     original_price: 2999,
     discount: 45,
-    img: "	https://cdn2.stylicy.com/global/image-5764-158137241-1-big-hr.jpg",
+    img: "	https://www.tradeinn.com/f/13812/138126360/nike-air-max-ap-running-shoes.jpg",
     categoryName: "casual",
   },
 
   {
     _id: uuid(),
     name: "Liberty",
-    description: "Asics Women's Glideride 2 Standard Cream Running Shoes",
+    description: "Asics Women's Glideride       Cream Running Shoes",
     price: 6499,
     qty: 1,
     category: "female",
@@ -380,7 +380,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Liberty",
-    description: "Double White Casual Flip Flops",
+    description: "Casual Flip Flops",
     price: 1199,
     qty: 1,
     category: "female",
@@ -401,7 +401,7 @@ export const products = [
   {
     _id: uuid(),
     name: "adidas",
-    description: "Classic Penny Loafer Moccasin",
+    description: "Classic     Penny Loafer Moccasin",
     price: 1499,
     qty: 1,
     category: "female",
@@ -479,7 +479,7 @@ export const products = [
     best_seller: false,
     original_price: 3499,
     discount: 45,
-    img: "	https://cdn-images.farfetch-contents.com/17/62/10/86/17621086_36741822_300.jpg",
+    img: "	https://i.pinimg.com/736x/73/86/32/738632d53bd2d1e73fc9e9a256628891.jpg",
     categoryName: "sneakers",
   },
 
@@ -506,7 +506,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Puma",
-    description: "Men's Puma Pacer Future Alumni Slip-On Sneakers",
+    description: "Men's Puma Pacer Future      Alumni Slip-On Sneakers",
     price: 4339,
     qty: 1,
     category: "male",

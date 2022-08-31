@@ -1,5 +1,5 @@
 import { useFilter } from "../context/filter-context";
-
+import React from "react";
 const SortBar = () => {
   const [state, dispatchItem] = useFilter();
   return (

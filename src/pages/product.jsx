@@ -13,6 +13,8 @@ import { filterByCategory } from "../utils/filterByCategories";
 import { filterByDiscount } from "../utils/filterByDiscount";
 import { useFilter } from "../context/filter-context";
 import { ProductImg } from "./ProductImg";
+import Empty from "../assets/empty-cart.svg";
+
 export default function Product() {
   const [
     {
@@ -64,13 +66,23 @@ export default function Product() {
         <FilterBar />
         <SortBar />
         <div className="product-container">
-          {getFilterData &&
+          {getFilterData.length > 0 ? (
             getFilterData.map((getFilterData) => (
               <div>
-                <ProductImg {...getFilterData} noDetail />
-                <ProductCard {...getFilterData} noDetail />
+                <ProductImg products={getFilterData} />
+                <ProductCard products={getFilterData} />
               </div>
-            ))}
+            ))
+          ) : (
+            <img
+              src={Empty}
+              style={{
+                width: "40vw",
+                marginLeft: "25%",
+                marginBottom: "2rem",
+              }}
+            ></img>
+          )}
         </div>
       </div>
     </>

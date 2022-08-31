@@ -1,5 +1,5 @@
 import { useContext, createContext, useState } from "react";
-
+import React from "react";
 const AuthContext = createContext({ isLoggedIn: false });
 
 const AuthProvider = ({ children }) => {

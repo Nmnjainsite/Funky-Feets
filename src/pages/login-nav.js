@@ -1,3 +1,4 @@
+import React from "react";
 const LoginNav = () => {
   return (
     <div className="login-nav-container">

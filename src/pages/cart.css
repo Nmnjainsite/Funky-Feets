@@ -8,23 +8,26 @@ body {
   grid-template-columns: repeat(2, 1fr);
   list-style: none;
   width: 100%;
-
-  align-items: center;
-  justify-content: center;
 }
 .wishlist-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   list-style: none;
-  border: 1px solid grey;
+  border-bottom: 1px solid lightgray;
   width: 100%;
   padding: 0.5rem;
+  height: 90%;
 }
 .cart {
   display: grid;
   margin: 1rem;
   width: 100%;
   grid-template-columns: repeat(1, 1fr);
+  overflow-y: scroll;
+  max-height: 70vh;
+  overflow-x: hidden;
+  padding: 0rem 2rem;
+  border: 1px solid grey;
 }
 .wishlist-cart {
   display: grid;
@@ -33,20 +36,28 @@ body {
 }
 
 .total-item {
-  width: 70%;
+  width: 50%;
+  height: 66vh;
   float: right;
   text-align: right;
-  padding: 1rem;
+  padding: 1rem 3rem;
+  border-radius: 0.5rem;
   margin: 1rem;
+  background-color: #262626;
+  color: var(--primary-color);
   border: 1px solid grey;
+}
+.subtotal {
+  text-align: center;
+  font-size: 1.3rem;
 }
 
 .order-button {
   border: none;
-  border-radius: 0.5rem;
-  padding: 0.7rem;
-  background-color: var(--secondary-color);
-  color: var(--background-color);
+  border-radius: 0.3rem;
+  padding: 0.7rem 4rem;
+  background-color: var(--background-color);
+  color: var(--primary-color);
   cursor: pointer;
   text-align: center;
 }
@@ -61,10 +72,6 @@ body {
   width: 100%;
 }
 
-/* .img-col-1 {
-  width: 100%;
-} */
-
 .wishlist-cart-typography {
   width: 150%;
   margin-left: 2rem;
@@ -76,25 +83,25 @@ body {
 .tags {
   cursor: pointer;
   float: right;
+  margin-top: -1rem;
+
+  width: 6rem;
+  height: 2rem;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+.subtotoal-num {
+  text-align: center;
+}
+.empty-cart-image {
   margin: 1rem;
+  width: 80%;
+  margin-left: 50%;
 }
-
-.tags > p {
-  float: right;
-  margin: 0.3rem;
-  margin-top: -0.8rem;
-  position: relative;
-}
-.tags > span {
-  float: right;
-  margin: 0.3rem;
-  margin-top: -0.8rem;
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 850px) {
   .cart {
-    width: 88%;
-    margin: 1rem;
+    width: 75%;
+    margin-left: 5%;
   }
   .total-item {
     width: 85%;
@@ -103,10 +110,31 @@ body {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
+    padding-bottom: 1rem;
   }
+  .wishlist-container {
+    height: 95%;
+  }
+
   .cart-box {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    margin: 0rem;
+    align-items: center;
+  }
+  .total-item {
+    width: 72%;
+    margin-right: 5%;
+    height: 86vh;
+    text-align: right;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background-color: #262626;
+    color: var(--primary-color);
+    border: 1px solid grey;
+  }
+  .empty-cart-image {
+    margin: 1rem;
+    width: 80%;
+    margin-left: 10%;
   }
 }
