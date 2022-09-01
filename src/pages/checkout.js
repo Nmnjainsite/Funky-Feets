@@ -2,23 +2,38 @@ import { BiRupee } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { Nav } from "./Nav";
 import Empty from "../assets/empty-cart.svg";
-import "./cart.css";
+import "./checkout.css";
 import { Footer } from "./footer";
 import React from "react";
 import { useItem } from "../context/item-context";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function CheckOut() {
-  const [
-    { item, value, totalPrice, ogPrice, totalDiscount, quantity },
-    dispatch,
-  ] = useItem();
+  const [{ item }, dispatch] = useItem();
 
-  const [data, setData] = useState();
-  const [fetch, setFetch] = useState();
-  function getData() {
-    const fetch = data;
-    setFetch(data);
-  }
+  const [total, setTotal] = useState(0);
+  const [original, setOriginal] = useState(0);
+  const [discountValue, setDiscountValue] = useState(0);
+  const [quantity, showQuantity] = useState(0);
+  useEffect(() => {
+    setTotal(
+      item.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+    );
+    setOriginal(
+      item.reduce(
+        (acc, curr) => acc + Number(curr.original_price) * curr.qty,
+        0
+      )
+    );
+    setDiscountValue(
+      item.reduce(
+        (acc, curr) =>
+          acc + Number(curr.original_price - curr.price) * curr.qty,
+        0
+      )
+    );
+    showQuantity(item.reduce((acc, curr) => acc + curr.qty, 0));
+  }, [item]);
+
   return (
     <div>
       <Nav />
@@ -30,23 +45,16 @@ export default function CheckOut() {
           ></img>
         )}
 
-        <div
-          style={{
-            width: "40vw",
-            marginLeft: "50%",
-            marginTop: "2rem",
-          }}
-        >
-          {ogPrice > 0 && (
-            <div className="total-item">
-              <h3 className="subtotal">Order Summary</h3>
+        <div>
+          {total > 0 && (
+            <div className="checkout-item">
+              <h3 className="order-details">Order Details</h3>
               <div>
                 {" "}
                 {item.map((item) => (
-                  <li style={{ height: "2vw" }}>
+                  <li className="list-of-name">
                     <span style={{ float: "left", fontSize: "1rem" }}>
-                      {item.name}{" "}
-                      <span style={{ color: "grey" }}> @Funky Feet</span>
+                      {item.description.slice(-25)}{" "}
                     </span>{" "}
                     {item.qty}
                   </li>
@@ -57,13 +65,13 @@ export default function CheckOut() {
                 <span style={{ float: "left" }}>MRP :</span>
                 <span>
                   <BiRupee></BiRupee>
-                  {ogPrice}
+                  {original}
                 </span>
               </p>
 
               <p>
                 <span style={{ float: "left" }}>Discount :</span>
-                <span>{totalDiscount}</span>
+                <span>{discountValue}</span>
               </p>
               <p>
                 <span style={{ float: "left" }}>Delivery :</span>
@@ -75,25 +83,25 @@ export default function CheckOut() {
                 <span style={{ float: "left" }}>Items :</span>
                 <span>
                   <BiRupee></BiRupee>
-                  {totalPrice}
+                  {total}
                 </span>
               </p>
               <h4 style={{ color: "brown" }}>
                 <span style={{ float: "left" }}>Order Total:</span>
                 <BiRupee></BiRupee>
-                {totalPrice + 99}
+                {total + 99}
               </h4>
               <hr />
               <div>
                 <p style={{ textAlign: "center" }}>Delivery Address</p>
-                <li>Naman Jain</li>
-                <li>Mathur Colony</li>
-                <li>Guna</li>
+                <li className="delivery-details">Naman Jain</li>
+                <li className="delivery-details">Mathur Colony</li>
+                <li className="delivery-details">Guna</li>
                 <hr />
               </div>
               <div style={{ textAlign: "center" }}>
                 <Link to="/checkout">
-                  <button className="order-button">Check Out</button>
+                  <button className="order-button">Place Your Order</button>
                 </Link>
               </div>
             </div>

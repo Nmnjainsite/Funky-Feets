@@ -6,7 +6,7 @@
   gap: 1rem;
   width: 80%;
   float: right;
-
+  margin-bottom: 2rem;
   object-fit: contain;
 }
 
@@ -149,7 +149,8 @@ input {
   }
   .product-container {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 52rem;
+    margin-top: 59rem;
+
     margin-right: 2rem;
   }
   .product-cart-button {

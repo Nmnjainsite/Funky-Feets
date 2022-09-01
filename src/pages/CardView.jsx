@@ -1,6 +1,6 @@
 import { BsXLg, BsFillHeartFill, BsHeart, BsStar } from "react-icons/bs";
 import { BiRupee } from "react-icons/bi";
-import React from "react";
+import React, { useEffect } from "react";
 import { useItem } from "../context/item-context";
 import { useWishlist } from "../context/wishlist-context";
 import { Footer } from "./footer";
@@ -12,31 +12,20 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 const CardView = ({ products }) => {
   const {
-    best_seller,
     rating,
     img,
     _id,
-    name,
     price,
     description,
     discount,
     original_price,
-    fast_delivery,
-    in_stocks,
-    color,
     qty,
     noDetail,
   } = products;
-  const [
-    { item, value, totalPrice, ogPrice, totalDiscount, quantity },
-    dispatch,
-  ] = useItem();
-  const [count, setCount] = useState(1);
-  const qtyValue = (totalPrice) => totalPrice * count;
-
-  const totalValue = qtyValue(price);
+  const [{ item }, dispatch] = useItem();
   const { wishlistState, wishlistDispatch } = useWishlist();
   const isInWishlist = findArray(_id, wishlistState.itemInWishlist);
+
   return (
     <div className="card-view-container">
       <ul className="wishlist-container">
@@ -82,12 +71,29 @@ const CardView = ({ products }) => {
               </p>
             </div>
             <div>
-              <span style={{ margin: "0.3rem" }}>Quantity : {count}</span>
-              <button onClick={() => setCount((count) => count + 1)}>
+              <button
+                className="minus-button"
+                onClick={() =>
+                  dispatch({
+                    type: "DECREMENT_QTY",
+                    payload: _id,
+                  })
+                }
+              >
+                -
+              </button>
+              <span style={{ margin: "0.3rem" }}>{qty}</span>
+              <button
+                className="minus-button"
+                onClick={() =>
+                  dispatch({
+                    type: "INCREMENT_QTY",
+                    payload: _id,
+                  })
+                }
+              >
                 +
               </button>{" "}
-              <button onClick={() => setCount((count) => count - 1)}>-</button>
-              {totalValue}
               <div>
                 {" "}
                 {!noDetail && (

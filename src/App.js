@@ -11,7 +11,7 @@ import { ProductCard } from "./pages/ProductCard";
 import { ProductDetails } from "./pages/productDetail";
 import { NotFound } from "./pages/404";
 import { RequireAuth } from "./pages/RequireAuth";
-import CheckOut from "./pages/order";
+import CheckOut from "./pages/checkout";
 export default function App() {
   return (
     <div className="App">

@@ -37,11 +37,6 @@ function ProductCard({ products }) {
     } else {
       dispatch({
         type: "ADD_TO_CART",
-
-        payload3: Number(original_price - price),
-        payload2: Number(original_price),
-        payload: Number(price),
-
         payload1: products,
       });
       toast.success("🦄 Added To Cart !", {

@@ -4,32 +4,17 @@ const ItemContext = createContext(null);
 const useItem = () => useContext(ItemContext);
 
 const initialState = {
-  value: 0,
-  totalPrice: 0,
   item: [],
-  quantity: 1,
-  itemPrice: 0,
-  ogPrice: 0,
-  totalDiscount: 0,
 };
 
 function ItemProvider({ children }) {
-  const [
-    { value, totalPrice, item, quantity, itemPrice, ogPrice, totalDiscount },
-    dispatch,
-  ] = useReducer(itemFunction, initialState);
+  const [{ item }, dispatch] = useReducer(itemFunction, initialState);
 
   return (
     <ItemContext.Provider
       value={[
         {
-          value,
           item,
-          totalPrice,
-          quantity,
-          itemPrice,
-          ogPrice,
-          totalDiscount,
         },
         dispatch,
       ]}
@@ -45,25 +30,30 @@ function itemFunction(state, action) {
       return {
         ...state,
         item: [...state.item, action.payload1],
-        value: state.value + 1,
-        totalPrice: state.totalPrice + action.payload,
-        ogPrice: state.ogPrice + action.payload2,
-        totalDiscount: state.totalDiscount + action.payload3,
       };
     case "REMOVE_FROM_CART":
       return {
         ...state,
         item: state.item.filter((item) => item._id !== action.payload),
-        value: state.value - 1,
-        totalPrice: state.totalPrice - action.payload1,
-        ogPrice: state.ogPrice - action.payload2,
-        totalDiscount: state.totalDiscount - action.payload3,
       };
-    // case "INCRE_QTY":
-    //   return {
-    //     ...state,
-    //    item :
-    //   };
+    case "INCREMENT_QTY":
+      return {
+        ...state,
+        item: state.item.filter((data) =>
+          data._id === action.payload ? (data.qty = data.qty + 1) : data.qty
+        ),
+      };
+    case "DECREMENT_QTY":
+      return {
+        ...state,
+        item: state.item.filter((data) =>
+          data._id === action.payload
+            ? data.qty > 1
+              ? (data.qty = data.qty - 1)
+              : data.qty
+            : data.qty
+        ),
+      };
     case "CLEAR":
       return {
         item: [],
