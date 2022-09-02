@@ -1,13 +1,14 @@
 import React from "react";
-import error404 from "../assets/404.svg";
+import error404 from "../../assets/404.svg";
 import { Link } from "react-router-dom";
-import { LoginNav } from "./login-nav";
+import { LoginNav } from "../Nav/login-nav";
 function NotFound() {
   return (
     <div>
       <LoginNav />
       <h1 style={{ textAlign: "center", color: "#262626" }}>
-        Looks like there's a broken link !! We are fixing it.Please Login Again.
+        <span style={{ color: "red" }}> Oops</span> !! Looks like there's a
+        broken link !! Please Try Again.
       </h1>
       <div>
         {" "}
@@ -24,7 +25,7 @@ function NotFound() {
           top: "3rem",
         }}
       >
-        Home
+        Back To Home
       </Link>
     </div>
   );

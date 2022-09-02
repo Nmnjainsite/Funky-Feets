@@ -1,13 +1,38 @@
 import { BsFillHeartFill, BsStar, BsHeart } from "react-icons/bs";
-import { useWishlist } from "../context/wishlist-context";
+import { useWishlist } from "../../context/wishlist-context";
 import { Link } from "react-router-dom";
-import { findArray } from "../utils/find";
+import { findArray } from "../../utils/find";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { useAuth } from "../../context/auth-context";
 function ProductImg({ products }) {
   const { best_seller, rating, img, _id } = products;
   const { wishlistState, wishlistDispatch } = useWishlist();
   const isInWishlist = findArray(_id, wishlistState.itemInWishlist);
+  const { isLoggedIn } = useAuth();
+
+  const WishlistHandler = (id, products) => {
+    if (isLoggedIn) {
+      if (isInWishlist) {
+        wishlistDispatch({ type: "REMOVE_FROM_WISHLIST", payload: id });
+        toast.error("Removed From Wishlist", {
+          position: "top-center",
+          autoClose: 1000,
+        });
+      } else {
+        wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: products });
+        toast.success("Added To Wishlist", {
+          position: "top-center",
+          autoClose: 1000,
+        });
+      }
+    } else {
+      toast.error("Please Login First !", {
+        position: "top-center",
+        autoClose: 1000,
+      });
+    }
+  };
   return (
     <>
       <li className="card-container" style={{ listStyle: "none" }}>
@@ -16,30 +41,12 @@ function ProductImg({ products }) {
           {isInWishlist ? (
             <BsFillHeartFill
               className="card-wishlist-emoji"
-              onClick={() => {
-                wishlistDispatch({
-                  type: "REMOVE_FROM_WISHLIST",
-                  payload: _id,
-                });
-                toast.error("Removed From Wishlist", {
-                  position: "top-center",
-                  autoClose: 1000,
-                });
-              }}
+              onClick={() => WishlistHandler(_id, products)}
             ></BsFillHeartFill>
           ) : (
             <BsHeart
               className="card-wishlist-emoji"
-              onClick={() => {
-                wishlistDispatch({
-                  type: "ADD_TO_WISHLIST",
-                  payload: products,
-                });
-                toast.success("Added To Wishlist", {
-                  position: "top-center",
-                  autoClose: 1000,
-                });
-              }}
+              onClick={() => WishlistHandler(_id, products)}
             ></BsHeart>
           )}
           <Link to={`/ProductDetail/${_id}`}>

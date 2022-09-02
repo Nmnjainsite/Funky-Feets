@@ -1,6 +1,6 @@
-import { Footer } from "./footer";
-import { LoginNav } from "./login-nav";
-import signIn from "../assets/signIn.svg";
+import { Footer } from "../footer/footer";
+import { LoginNav } from "../Nav/login-nav";
+import signIn from "../../assets/signIn.svg";
 import { Link } from "react-router-dom";
 import "./signup.css";
 import React from "react";

@@ -1,10 +1,10 @@
 import React from "react";
 import "./login.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useAuth } from "../context/auth-context";
-import { Footer } from "./footer";
-import funky from "../assets/funky.jpg";
-import { LoginNav } from "./login-nav";
+import { useAuth } from "../../context/auth-context";
+import { Footer } from "../footer/footer";
+import funky from "../../assets/funky.jpg";
+import { LoginNav } from "../Nav/login-nav";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 function Login() {

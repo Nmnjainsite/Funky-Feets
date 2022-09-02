@@ -52,7 +52,7 @@ export const products = [
 
   {
     _id: uuid(),
-    name: "Air Max",
+    name: "Air",
     description: "Air  Max, Fast Cat Sneakers ",
     price: 1649,
     qty: 1,
@@ -67,13 +67,14 @@ export const products = [
     best_seller: true,
     original_price: 2499,
     discount: 40,
-    img: "https://media.kohlsimg.com/is/image/kohls/4228758_White_Black_Platinum?wid=600&hei=600&op_sharpen=1",
+    img:
+      "https://media.kohlsimg.com/is/image/kohls/4228758_White_Black_Platinum?wid=600&hei=600&op_sharpen=1",
     categoryName: "sneakers",
   },
   {
     _id: uuid(),
-    name: "Air Max",
-    description: "Nike Men Air Max 90 Qs",
+    name: "Air",
+    description: "Nike Men Air 90 Qs",
     price: 949,
     qty: 1,
     category: "male",
@@ -87,7 +88,8 @@ export const products = [
     best_seller: true,
     original_price: 1199,
     discount: 10,
-    img: "	https://manofmany.com/wp-content/uploads/2021/03/silver-surfer-best-air-max-90-of-all-time.png",
+    img:
+      "	https://manofmany.com/wp-content/uploads/2021/03/silver-surfer-best-air-max-90-of-all-time.png",
     categoryName: "casual",
   },
   {
@@ -107,13 +109,14 @@ export const products = [
     best_seller: false,
     original_price: 1999,
     discount: 20,
-    img: "	https://www.efootwear.eu/media/catalog/product/cache/image/800x800/0/0/0000209409130_01_ks.jpg",
+    img:
+      "	https://www.efootwear.eu/media/catalog/product/cache/image/800x800/0/0/0000209409130_01_ks.jpg",
     categoryName: "sneakers",
   },
   {
     _id: uuid(),
-    name: "Air Max",
-    description: "Mens Nike Air Max",
+    name: "Air",
+    description: "Mens Nike Air",
     price: 5950,
     qty: 1,
     category: "male",
@@ -127,7 +130,8 @@ export const products = [
     best_seller: false,
     original_price: 6999,
     discount: 15,
-    img: "	https://s7d2.scene7.com/is/image/academy/20662968?$d-plp-product-image$",
+    img:
+      "	https://s7d2.scene7.com/is/image/academy/20662968?$d-plp-product-image$",
     categoryName: "casual",
   },
 
@@ -148,7 +152,8 @@ export const products = [
     best_seller: false,
     original_price: 799,
     discount: 25,
-    img: "	https://dxkvlfvncvqr8.cloudfront.net/media/product-image/SFG-1072-BLBL-1.jpg",
+    img:
+      "	https://dxkvlfvncvqr8.cloudfront.net/media/product-image/SFG-1072-BLBL-1.jpg",
     categoryName: "crocs",
   },
   {
@@ -168,7 +173,8 @@ export const products = [
     best_seller: true,
     original_price: 1199,
     discount: 20,
-    img: "	https://content.woodlandworldwide.com/static/images/products/16517/main-fgf0180u3842a-black-1.jpg",
+    img:
+      "	https://content.woodlandworldwide.com/static/images/products/16517/main-fgf0180u3842a-black-1.jpg",
     categoryName: "formals",
   },
   {
@@ -208,7 +214,8 @@ export const products = [
     best_seller: true,
     original_price: 899,
     discount: 25,
-    img: "https://5.imimg.com/data5/LR/WL/VE/SELLER-26286062/kids-leather-shoes-250x250.jpg",
+    img:
+      "https://5.imimg.com/data5/LR/WL/VE/SELLER-26286062/kids-leather-shoes-250x250.jpg",
     categoryName: "formals",
   },
 
@@ -229,7 +236,8 @@ export const products = [
     best_seller: false,
     original_price: 1199,
     discount: 35,
-    img: "https://tarakonline.com/upload/ProductColor/RealImage/2971(SS)LSP1PISL139(8).jpg",
+    img:
+      "https://tarakonline.com/upload/ProductColor/RealImage/2971(SS)LSP1PISL139(8).jpg",
     categoryName: "sports",
   },
 
@@ -270,7 +278,8 @@ export const products = [
     best_seller: true,
     original_price: 2999,
     discount: 40,
-    img: "https://footwearnews.com/wp-content/uploads/2019/08/puma-suede-classic-sneaker.jpg",
+    img:
+      "https://footwearnews.com/wp-content/uploads/2019/08/puma-suede-classic-sneaker.jpg",
     categoryName: "sneakers",
   },
   {
@@ -290,13 +299,14 @@ export const products = [
     best_seller: false,
     original_price: 549,
     discount: 48,
-    img: "https://5.imimg.com/data5/OC/KN/II/SELLER-3678405/elasto-02-eva-sports-shoes-women-500x500.jpeg",
+    img:
+      "https://5.imimg.com/data5/OC/KN/II/SELLER-3678405/elasto-02-eva-sports-shoes-women-500x500.jpeg",
     categoryName: "sports",
   },
   {
     _id: uuid(),
-    name: "Air Max",
-    description: "Mens Casual Air Max",
+    name: "Air",
+    description: "Mens Casual Air",
     price: 1999,
     qty: 1,
     category: "male",
@@ -310,13 +320,14 @@ export const products = [
     best_seller: false,
     original_price: 3999,
     discount: 50,
-    img: "https://classic.cdn.media.amplience.net/i/hibbett/5P449_3055_right2?w=300&h=300&img404=404&v=1",
+    img:
+      "https://classic.cdn.media.amplience.net/i/hibbett/5P449_3055_right2?w=300&h=300&img404=404&v=1",
     categoryName: "casual",
   },
 
   {
     _id: uuid(),
-    name: "Air Max",
+    name: "Air",
     description: "Allen Solly Grey Lace Up Shoes",
     price: 1649,
     qty: 1,
@@ -331,7 +342,8 @@ export const products = [
     best_seller: true,
     original_price: 2999,
     discount: 45,
-    img: "	https://www.tradeinn.com/f/13812/138126360/nike-air-max-ap-running-shoes.jpg",
+    img:
+      "	https://www.tradeinn.com/f/13812/138126360/nike-air-max-ap-running-shoes.jpg",
     categoryName: "casual",
   },
 
@@ -352,7 +364,8 @@ export const products = [
     best_seller: true,
     original_price: 12999,
     discount: 50,
-    img: "https://thumbs.dreamstime.com/b/funky-canvas-shoes-yellow-white-202724035.jpg",
+    img:
+      "https://thumbs.dreamstime.com/b/funky-canvas-shoes-yellow-white-202724035.jpg",
     categoryName: "sneakers",
   },
 
@@ -373,7 +386,8 @@ export const products = [
     best_seller: false,
     original_price: 2599,
     discount: 20,
-    img: "https://eu.louisvuitton.com/images/is/image/lv/1/P…t-slingback-pump--AN5E1ESSRR_PM2_Front%20view.jpg",
+    img:
+      "https://eu.louisvuitton.com/images/is/image/lv/1/P…t-slingback-pump--AN5E1ESSRR_PM2_Front%20view.jpg",
     categoryName: "crocs",
   },
 
@@ -436,7 +450,8 @@ export const products = [
     best_seller: true,
     original_price: 799,
     discount: 40,
-    img: "	https://5.imimg.com/data5/PW/DS/GT/SELLER-65814696/kids-shoes-500x500.jpg",
+    img:
+      "	https://5.imimg.com/data5/PW/DS/GT/SELLER-65814696/kids-shoes-500x500.jpg",
     categoryName: "casual",
   },
 
@@ -479,7 +494,8 @@ export const products = [
     best_seller: false,
     original_price: 3499,
     discount: 45,
-    img: "	https://i.pinimg.com/736x/73/86/32/738632d53bd2d1e73fc9e9a256628891.jpg",
+    img:
+      "	https://i.pinimg.com/736x/73/86/32/738632d53bd2d1e73fc9e9a256628891.jpg",
     categoryName: "sneakers",
   },
 
@@ -500,7 +516,8 @@ export const products = [
     best_seller: true,
     original_price: 899,
     discount: 40,
-    img: "	https://footwearnews.com/wp-content/uploads/2021/08/Screen-Shot-2021-08-06-at-8.55.19-AM.png?w=876",
+    img:
+      "	https://footwearnews.com/wp-content/uploads/2021/08/Screen-Shot-2021-08-06-at-8.55.19-AM.png?w=876",
     categoryName: "crocs",
   },
   {
@@ -520,7 +537,8 @@ export const products = [
     best_seller: false,
     original_price: 6999,
     discount: 38,
-    img: "	https://i8.amplience.net/s/scvl/123228_260556_SET/1?fmt=auto&$webPlp$",
+    img:
+      "	https://i8.amplience.net/s/scvl/123228_260556_SET/1?fmt=auto&$webPlp$",
     categoryName: "sports",
   },
   {
@@ -540,7 +558,8 @@ export const products = [
     best_seller: false,
     original_price: 799,
     discount: 30,
-    img: "	https://dxkvlfvncvqr8.cloudfront.net/media/product-image/SK-526-BLGN-1.jpg",
+    img:
+      "	https://dxkvlfvncvqr8.cloudfront.net/media/product-image/SK-526-BLGN-1.jpg",
     categoryName: "sports",
   },
 
@@ -561,7 +580,8 @@ export const products = [
     in_stocks: true,
     best_seller: true,
     discount: 30,
-    img: "	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH6jJBBTOdfJfUDtOz3M_VwkfptnRC8hIwkg&usqp=CAU",
+    img:
+      "	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH6jJBBTOdfJfUDtOz3M_VwkfptnRC8hIwkg&usqp=CAU",
     categoryName: "sneakers",
   },
 ];

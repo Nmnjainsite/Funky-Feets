@@ -1,12 +1,11 @@
 import React from "react";
-import "./product.css";
-import { useWishlist } from "../context/wishlist-context";
+import { useWishlist } from "../../context/wishlist-context";
 import { AiFillDelete } from "react-icons/ai";
-import { findArray } from "../utils/find";
+import { findArray } from "../../utils/find";
 import { BiRupee } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import "./wishlist.css";
-import { useItem } from "../context/item-context";
+import { useItem } from "../../context/item-context";
 import { BsFillCartFill, BsStar } from "react-icons/bs";
 import { ToastContainer, toast } from "react-toastify";
 function WishlistCardView({ products }) {

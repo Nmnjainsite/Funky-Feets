@@ -1,7 +1,9 @@
 import { useFilter } from "../context/filter-context";
 import React from "react";
 const SortBar = () => {
-  const [state, dispatchItem] = useFilter();
+  const { state, dispatchItem } = useFilter();
+  const { sortBy } = state;
+
   return (
     <div>
       <select

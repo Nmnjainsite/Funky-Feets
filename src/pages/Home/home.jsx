@@ -1,21 +1,33 @@
 import React from "react";
 import "./home.css";
-import women from "../assets/women.jpg";
-import img2 from "../assets/img2.jpg";
-import red from "../assets/red.jpg";
-import air from "../assets/air.jpg";
-import puma from "../assets/puma.jpg";
-import shoes from "../assets/shoes.jpg";
-import crocs from "../assets/crocs.jpg";
-import crocsMen from "../assets/crocs-men.jpg";
-import adidas from "../assets/adidas.jpg";
-import sneakers from "../assets/sneakers.jpg";
-import sports from "../assets/sports.jpg";
+import women from "../../assets/women.jpg";
+import img2 from "../../assets/img2.jpg";
+import red from "../../assets/red.jpg";
+import air from "../../assets/air.jpg";
+import puma from "../../assets/puma.jpg";
+import crocs from "../../assets/crocs.jpg";
+import crocsMen from "../../assets/crocs-men.jpg";
+import adidas from "../../assets/adidas.jpg";
+import sneakers from "../../assets/sneakers.jpg";
+import sports from "../../assets/sports.jpg";
 import { BsFillCartFill, BsFillHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import { Footer } from "./footer";
-import { Nav } from "./Nav";
+import { Footer } from "../footer/footer";
+import { Nav } from "../Nav/Nav";
+import { useFilter } from "../../context/filter-context";
 export default function Home() {
+  const { state, dispatchItem } = useFilter();
+  const {
+    sortBy,
+    searchValue,
+    discount,
+    category,
+    itemsInStocks,
+    getFastDelivery,
+    bestSeller,
+    categoryName,
+    name,
+  } = state;
   return (
     <div className="App">
       {/*-------------header-------------- */}
@@ -49,7 +61,16 @@ export default function Home() {
             enhances your style to the core. "Give a girl the right shoes and
             she can conqure the world"
           </p>
-          <button className="card-btn">Shop Women Casuals</button>
+          <Link to="/Products">
+            <button
+              className="card-btn"
+              onClick={() =>
+                dispatchItem({ type: "CATEGORY", payload: "FEMALE" })
+              }
+            >
+              Shop Women Casuals
+            </button>
+          </Link>
         </div>
 
         <div className="crocs-card">
@@ -60,7 +81,17 @@ export default function Home() {
             Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs.
             Prefect for the lazy summer afternoons.
           </p>
-          <button className="crocs-btn">Shop Men Casuals</button>
+          <Link to="/Products">
+            {" "}
+            <button
+              className="crocs-btn"
+              onClick={() =>
+                dispatchItem({ type: "CATEGORY", payload: "MALE" })
+              }
+            >
+              Shop Men Casuals
+            </button>
+          </Link>
         </div>
       </div>
       {/* --------------------responsive images----------------- */}
@@ -114,11 +145,11 @@ export default function Home() {
           <button className="add-to-cart">Add To Cart</button>
         </div>
 
-        <div className="sneakers-shoes">
+        {/* <div className="sneakers-shoes">
           <img src={shoes} className="trending-pics"></img>
           <p className="brand-name">Liberty</p>
           <button className="add-to-cart">Add To Cart</button>
-        </div>
+        </div> */}
       </div>
 
       {/* ------------------------footer------------------------- */}

@@ -1,8 +1,8 @@
 import React from "react";
-import { useWishlist } from "../context/wishlist-context";
-import { Footer } from "./footer";
-import { Nav } from "./Nav";
-import Empty from "../assets/empty-cart.svg";
+import { useWishlist } from "../../context/wishlist-context";
+import { Footer } from "../footer/footer";
+import { Nav } from "../Nav/Nav";
+import Empty from "../../assets/empty-cart.svg";
 import WishlistCardView from "./wishlistCard";
 
 function Wishlist() {

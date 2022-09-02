@@ -59,6 +59,10 @@ input {
   width: 80%;
 }
 
+/* .card-container:hover {
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15), 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+} */
+
 .product-card-typography {
   position: relative;
   font-family: "Lato", sans-serif;

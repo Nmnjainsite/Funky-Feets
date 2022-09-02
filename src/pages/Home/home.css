@@ -214,11 +214,13 @@
 }
 
 .horizontal-card > p {
+  width: 80%;
+  margin-left: 10%;
   font-family: "Lora", serif;
 }
 
 .horizontal-img {
-  width: 80%;
+  width: 70%;
 }
 
 .crocs-card {
@@ -231,29 +233,45 @@
 }
 
 .crocs-img {
-  width: 80%;
+  width: 70%;
 }
 
 .card-btn {
   background-color: var(--background-color);
   color: var(--primary-color);
-  padding: 0.5rem;
+  padding: 0.7rem 0rem;
+  width: 12rem;
   border-radius: 0.3rem;
   cursor: pointer;
   border: none;
+  border: 1px solid var(--background-color);
+}
+
+.card-btn:hover {
+  color: var(--background-color);
+  background-color: var(--primary-color);
 }
 
 .crocs-btn {
   background-color: var(--background-color);
   color: var(--primary-color);
-  padding: 0.3rem;
+  padding: 0.7rem 0rem;
+  width: 12rem;
   border-radius: 0.3rem;
   cursor: pointer;
-  width: 9rem;
+  border: none;
+  border: 1px solid var(--background-color);
+}
+
+.crocs-btn:hover {
+  color: var(--background-color);
+  background-color: var(--primary-color);
 }
 
 .card-typography {
   font-family: "Lora", serif;
+  width: 75%;
+  margin-left: 13%;
 }
 
 /* ----------responsive image----------- */
@@ -285,11 +303,12 @@
 
 .trending-items {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   text-align: center;
 }
 .trending-pics {
   width: 60%;
+  height: 16vw;
 }
 
 .add-to-cart {

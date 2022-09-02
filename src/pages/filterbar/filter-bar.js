@@ -1,26 +1,20 @@
-import { useFilter } from "../context/filter-context";
-import { useItem } from "../context/item-context";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { useFilter } from "../../context/filter-context";
 import React from "react";
 const FilterBar = () => {
-  const [{ value }, dispatch] = useItem();
-  const [
-    {
-      // ADIDAS,
-      // PUMA,
-      // SPARX,
-      // AIR,
-      // LIBERTY,
-      name,
-      sortBy,
-      searchValue,
-      discount,
-      categoryName,
-      category,
-    },
-    dispatchItem,
-  ] = useFilter();
-
+  const { state, dispatchItem } = useFilter();
+  const {
+    sortBy,
+    searchValue,
+    discount,
+    category,
+    itemsInStocks,
+    getFastDelivery,
+    bestSeller,
+    categoryName,
+    name,
+  } = state;
+  const { casual, sneakers, sports, formals, crocs } = categoryName;
+  const { Air, Sparx, adidas, Puma, Liberty } = name;
   return (
     <div className="left-bar">
       <span
@@ -30,57 +24,34 @@ const FilterBar = () => {
         Clear all filters
       </span>
       <p className="nav-heading">Filter </p>
-      {/* <p className="nav-heading">Rating</p>
-      <input
-        type="range"
-        min="1"
-        max="5"
-        defaultValue="1"
-        onChange={(e) =>
-          dispatchItem({ type: "sort", payload: e.target.value })
-        }
-      ></input> */}
       <div>
-        <label>
+        <label style={{ fontSize: "1rem" }}>
           <input
             type="checkbox"
+            value="item_stocks"
             onChange={() => dispatchItem({ type: "item_stocks" })}
           />
-          In Stocks
+          Include Out Of Stocks
         </label>
         <div>
           {" "}
-          <label>
+          <label style={{ fontSize: "1rem" }}>
             <input
               type="checkbox"
+              value="item_delivery"
               onChange={() => dispatchItem({ type: "item_delivery" })}
             />
             Fast Delivery
           </label>
         </div>
-        <label>
+        <label style={{ fontSize: "1rem" }}>
           <input
             type="checkbox"
+            value="best_seller"
             onChange={() => dispatchItem({ type: "best_seller" })}
           />
           Best Seller
         </label>
-        {/* <div>
-          <label>
-            <input
-              type="checkbox"
-              onChange={() => dispatchItem({ type: "get_categories" })}
-            />
-            Casuals
-          </label>
-        </div>
-        <label>
-          <input
-            type="checkbox"
-            onChange={() => dispatchItem({ type: "get_sneakers" })}
-          />
-          Sneakers
-        </label> */}
       </div>
       <p className="nav-heading">Categories</p>
       <label>
@@ -118,7 +89,7 @@ const FilterBar = () => {
             type="checkbox"
             value="adidas"
             name="producer"
-            onChange={() => dispatchItem({ type: "NAME", payload: "ADIDAS" })}
+            onChange={() => dispatchItem({ type: "SHOW_ADIDAS" })}
           />
           adidas
         </label>{" "}
@@ -127,7 +98,7 @@ const FilterBar = () => {
             type="checkbox"
             value="air max"
             name="producer"
-            onChange={() => dispatchItem({ type: "NAME", payload: "AIR" })}
+            onChange={() => dispatchItem({ type: "SHOW_AIR" })}
           />
           Air Max
         </label>
@@ -136,7 +107,7 @@ const FilterBar = () => {
             type="checkbox"
             value="sparx"
             name="producer"
-            onChange={() => dispatchItem({ type: "NAME", payload: "SPARX" })}
+            onChange={() => dispatchItem({ type: "SHOW_SPARX" })}
           />
           Sparx
         </label>
@@ -145,7 +116,7 @@ const FilterBar = () => {
             type="checkbox"
             value="puma"
             name="producer"
-            onChange={() => dispatchItem({ type: "NAME", payload: "PUMA" })}
+            onChange={() => dispatchItem({ type: "SHOW_PUMA" })}
           />
           Puma
         </label>
@@ -154,7 +125,7 @@ const FilterBar = () => {
             type="checkbox"
             value="liberty"
             name="producer"
-            onChange={() => dispatchItem({ type: "NAME", payload: "LIBERTY" })}
+            onChange={() => dispatchItem({ type: "SHOW_LIBERTY" })}
           />
           Liberty
         </label>
@@ -167,9 +138,7 @@ const FilterBar = () => {
             type="checkbox"
             value="casuals"
             name="style"
-            onChange={() =>
-              dispatchItem({ type: "CATEGORYNAME", payload: "CASUALS" })
-            }
+            onChange={() => dispatchItem({ type: "SHOW_CASUAL" })}
           />
           casuals
         </label>
@@ -178,9 +147,7 @@ const FilterBar = () => {
             type="checkbox"
             value="sneakers"
             name="style"
-            onChange={() =>
-              dispatchItem({ type: "CATEGORYNAME", payload: "SNEAKERS" })
-            }
+            onChange={() => dispatchItem({ type: "SHOW_SNEAKERS" })}
           />
           sneakers
         </label>
@@ -189,9 +156,7 @@ const FilterBar = () => {
             type="checkbox"
             value="sports"
             name="style"
-            onChange={() =>
-              dispatchItem({ type: "CATEGORYNAME", payload: "SPORTS" })
-            }
+            onChange={() => dispatchItem({ type: "SHOW_SPORTS" })}
           />
           sports
         </label>
@@ -200,9 +165,7 @@ const FilterBar = () => {
             type="checkbox"
             value="formals"
             name="style"
-            onChange={() =>
-              dispatchItem({ type: "CATEGORYNAME", payload: "FORMALS" })
-            }
+            onChange={() => dispatchItem({ type: "SHOW_FORMALS" })}
           />
           formal
         </label>
@@ -211,9 +174,7 @@ const FilterBar = () => {
             type="checkbox"
             value="crocs"
             name="style"
-            onChange={() =>
-              dispatchItem({ type: "CATEGORYNAME", payload: "CROCS" })
-            }
+            onChange={() => dispatchItem({ type: "SHOW_CROCS" })}
           />
           Crocs
         </label>

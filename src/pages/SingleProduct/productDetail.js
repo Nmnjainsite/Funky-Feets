@@ -1,8 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import { ProductCard } from "./ProductCard";
-import { products } from "../backend/db/products";
-import { Nav } from "./Nav";
-import { Footer } from "./footer";
+import { products } from "../../backend/db/products";
+import { Nav } from "../Nav/Nav";
+import { Footer } from "../footer/footer";
 import "./ProductDetails.css";
 import SingleProductCard from "./SingleProductCard";
 import React from "react";

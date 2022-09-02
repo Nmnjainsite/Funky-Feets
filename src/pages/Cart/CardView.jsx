@@ -1,11 +1,11 @@
 import { BsXLg, BsFillHeartFill, BsHeart, BsStar } from "react-icons/bs";
 import { BiRupee } from "react-icons/bi";
 import React, { useEffect } from "react";
-import { useItem } from "../context/item-context";
-import { useWishlist } from "../context/wishlist-context";
-import { Footer } from "./footer";
+import { useItem } from "../../context/item-context";
+import { useWishlist } from "../../context/wishlist-context";
+import { Footer } from "../footer/footer";
 import "./cart.css";
-import { findArray } from "../utils/find";
+import { findArray } from "../../utils/find";
 import { Link } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai";
 import { useState } from "react";

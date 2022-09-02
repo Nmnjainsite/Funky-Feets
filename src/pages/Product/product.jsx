@@ -1,40 +1,33 @@
 import React from "react";
 import "./product.css";
-import { Nav } from "./Nav";
-import { FilterBar } from "./filter-bar";
-import { SortBar } from "./sort-bar";
+import { Nav } from "../Nav/Nav";
+import { FilterBar } from "../filterbar/filter-bar";
+import { SortBar } from "../sort-bar";
 import { ProductCard } from "./ProductCard";
-import { products } from "../backend/db/products";
-import { searchData } from "../utils/searchData";
-import { sortData } from "../utils/sortData";
-import { filterData } from "../utils/filterByTitle";
-import { filterByGender } from "../utils/filterByGender";
-import { filterByCategory } from "../utils/filterByCategories";
-import { filterByDiscount } from "../utils/filterByDiscount";
-import { useFilter } from "../context/filter-context";
+import { products } from "../../backend/db/products";
+import { searchData } from "../../utils/searchData";
+import { sortData } from "../../utils/sortData";
+import { filterData } from "../../utils/filterByTitle";
+import { filterByGender } from "../../utils/filterByGender";
+import { filterByCategory } from "../../utils/filterByCategories";
+import { filterByDiscount } from "../../utils/filterByDiscount";
+import { useFilter } from "../../context/filter-context";
 import { ProductImg } from "./ProductImg";
-import Empty from "../assets/empty-cart.svg";
+import Empty from "../../assets/empty-cart.svg";
 
 export default function Product() {
-  const [
-    {
-      // ADIDAS,
-      // PUMA,
-      // SPARX,
-      // AIR,
-      // LIBERTY,
-      name,
-      sortBy,
-      searchValue,
-      discount,
-      categoryName,
-      category,
-      getFastDelivery,
-      itemsInStocks,
-      bestSeller,
-    },
-    dispatchItem,
-  ] = useFilter();
+  const { state } = useFilter();
+  const {
+    sortBy,
+    searchValue,
+    discount,
+    category,
+    itemsInStocks,
+    getFastDelivery,
+    bestSeller,
+    categoryName,
+    name,
+  } = state;
 
   function inStockItem(
     productList,
@@ -44,7 +37,7 @@ export default function Product() {
       .filter(({ fast_delivery }) => (getFastDelivery ? fast_delivery : true))
       .filter(({ best_seller }) => (bestSeller ? best_seller : true))
 
-      .filter(({ in_stocks }) => (itemsInStocks ? true : in_stocks));
+      .filter(({ in_stocks }) => (itemsInStocks ? in_stocks : true));
   }
 
   const genderItem = filterByGender(products, category);

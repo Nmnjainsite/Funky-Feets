@@ -1,11 +1,11 @@
 import { BiRupee } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { Nav } from "./Nav";
-import Empty from "../assets/empty-cart.svg";
+import { Nav } from "../Nav/Nav";
+import Empty from "../../assets/empty-cart.svg";
 import "./checkout.css";
-import { Footer } from "./footer";
+import { Footer } from "../footer/footer";
 import React from "react";
-import { useItem } from "../context/item-context";
+import { useItem } from "../../context/item-context";
 import { useState, useEffect } from "react";
 export default function CheckOut() {
   const [{ item }, dispatch] = useItem();

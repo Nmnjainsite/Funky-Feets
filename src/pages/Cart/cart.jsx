@@ -1,12 +1,12 @@
 import { BiRupee } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { useItem } from "../context/item-context";
-import { Nav } from "./Nav";
+import { useItem } from "../../context/item-context";
+import { Nav } from "../Nav/Nav";
 import { useState, useEffect } from "react";
-import Empty from "../assets/empty-cart.svg";
+import Empty from "../../assets/empty-cart.svg";
 import "./cart.css";
 import CardView from "./CardView";
-import { Footer } from "./footer";
+import { Footer } from "../footer/footer";
 import React from "react";
 export default function Cart() {
   const [{ item }, dispatch] = useItem();

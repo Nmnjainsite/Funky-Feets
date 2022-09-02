@@ -1,11 +1,12 @@
 import { BsFillCartFill, BsStar } from "react-icons/bs";
 import React from "react";
 import { BiRupee } from "react-icons/bi";
-import { useWishlist } from "../context/wishlist-context";
+import { useWishlist } from "../../context/wishlist-context";
 import { Link, useNavigate } from "react-router-dom";
-import { findArray } from "../utils/find";
-import { useItem } from "../context/item-context";
+import { findArray } from "../../utils/find";
+import { useItem } from "../../context/item-context";
 import { ToastContainer, toast } from "react-toastify";
+import { useAuth } from "../../context/auth-context";
 function SingleProductCard({ products }) {
   const {
     rating,
@@ -25,19 +26,49 @@ function SingleProductCard({ products }) {
   const [{ state, item }, dispatch] = useItem();
   const navigate = useNavigate();
 
+  const { isLoggedIn } = useAuth();
   const isInCart = findArray(_id, item);
   const cartHandler = (_id, products) => {
-    if (isInCart) {
-      navigate("/Cart");
+    if (isLoggedIn) {
+      if (isInCart) {
+        navigate("/Cart");
+      } else {
+        dispatch({
+          type: "ADD_TO_CART",
+          payload1: products,
+        });
+        toast.success("🦄 Added To Cart !", {
+          position: "top-center",
+          autoClose: 1000,
+        });
+      }
     } else {
-      dispatch({
-        type: "ADD_TO_CART",
-        payload1: products,
-      });
-      toast.success("🦄 Added To Cart !", {
+      toast.error("Please Login First", {
         position: "top-center",
         autoClose: 1000,
-        fontSize: "1rem",
+      });
+    }
+  };
+
+  const WishlistHandler = (id, products) => {
+    if (isLoggedIn) {
+      if (isInWishlist) {
+        wishlistDispatch({ type: "REMOVE_FROM_WISHLIST", payload: id });
+        toast.error("Removed From Wishlist", {
+          position: "top-center",
+          autoClose: 1000,
+        });
+      } else {
+        wishlistDispatch({ type: "ADD_TO_WISHLIST", payload: products });
+        toast.success("Added To Wishlist", {
+          position: "top-center",
+          autoClose: 1000,
+        });
+      }
+    } else {
+      toast.error("Please Login First !", {
+        position: "top-center",
+        autoClose: 1000,
       });
     }
   };
@@ -148,17 +179,7 @@ function SingleProductCard({ products }) {
             <button
               style={{ marginLeft: "0.5rem" }}
               className="single-cart-button"
-              onClick={() => {
-                wishlistDispatch({
-                  type: "REMOVE_FROM_WISHLIST",
-                  payload: _id,
-                });
-                toast.error(" Removed From Wishlist !", {
-                  position: "top-center",
-                  autoClose: 1000,
-                  fontSize: "1rem",
-                });
-              }}
+              onClick={() => WishlistHandler(_id, products)}
             >
               Remove From Wishlist
             </button>
@@ -166,17 +187,7 @@ function SingleProductCard({ products }) {
             <button
               style={{ marginLeft: "0.5rem" }}
               className="single-cart-button"
-              onClick={() => {
-                wishlistDispatch({
-                  type: "ADD_TO_WISHLIST",
-                  payload: products,
-                });
-                toast.success("🦄 Added To Wishlist !", {
-                  position: "top-center",
-                  autoClose: 1000,
-                  fontSize: "1rem",
-                });
-              }}
+              onClick={() => WishlistHandler(_id, products)}
             >
               Add to Wishlist
             </button>
