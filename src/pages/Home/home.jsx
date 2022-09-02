@@ -55,11 +55,10 @@ export default function Home() {
       <div className="grid-cards">
         <div className="horizontal-card">
           <img src={crocs} className="horizontal-img"></img>
-          <h2 className="card-typography"> Graceful and Charming</h2>
+          <h2 className="card-typography"> Graceful and Cool</h2>
           <p className="card-typography">
             Multiply the grace and charm you possess with footwear for her that
-            enhances your style to the core. "Give a girl the right shoes and
-            she can conqure the world"
+            enhances your style.
           </p>
           <Link to="/Products">
             <button
@@ -75,7 +74,7 @@ export default function Home() {
 
         <div className="crocs-card">
           <img src={crocsMen} className="crocs-img"></img>
-          <h2 className="card-typography">Time to be LAZY! </h2>
+          <h2 className="card-typography">Time to be Lazy! </h2>
 
           <p className="card-typography">
             Crocs: The Only Way to Combat Sand in Your Shoes Is to Wear Crocs.
@@ -144,12 +143,6 @@ export default function Home() {
           <p className="brand-name">Puma</p>
           <button className="add-to-cart">Add To Cart</button>
         </div>
-
-        {/* <div className="sneakers-shoes">
-          <img src={shoes} className="trending-pics"></img>
-          <p className="brand-name">Liberty</p>
-          <button className="add-to-cart">Add To Cart</button>
-        </div> */}
       </div>
 
       {/* ------------------------footer------------------------- */}
