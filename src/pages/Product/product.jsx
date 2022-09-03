@@ -68,7 +68,7 @@ export default function Product() {
             ))
           ) : (
             <img
-              src={Empty}
+              src="https://img.freepik.com/premium-vector/file-found-…-magnifier-search-no-result_258153-336.jpg?w=2000"
               style={{
                 width: "40vw",
                 marginLeft: "25%",

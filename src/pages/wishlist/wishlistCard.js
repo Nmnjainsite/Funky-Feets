@@ -29,6 +29,10 @@ function WishlistCardView({ products }) {
   const cartHandler = (id, products) => {
     if (isInCart) {
       navigate("/Cart");
+      wishlistDispatch({
+        type: "REMOVE_FROM_WISHLIST",
+        payload: id,
+      });
     } else {
       dispatch({
         type: "ADD_TO_CART",

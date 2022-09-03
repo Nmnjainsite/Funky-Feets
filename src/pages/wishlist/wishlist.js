@@ -13,14 +13,16 @@ function Wishlist() {
   return (
     <div className="App">
       <Nav />
-
       <div className="wishlist-box-container">
         {itemInWishlist.length > 0 ? (
           itemInWishlist.map((itemInWishlist) => (
             <WishlistCardView products={itemInWishlist} />
           ))
         ) : (
-          <img src={Empty} style={{ width: "40vw", marginLeft: "50%" }}></img>
+          <img
+            src="	https://i.pinimg.com/originals/ff/7c/54/ff7c54add0b356712274ae8d1fab4016.png"
+            className="empty-img-wishlist"
+          ></img>
         )}
       </div>
 

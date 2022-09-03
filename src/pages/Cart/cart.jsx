@@ -49,7 +49,12 @@ export default function Cart() {
             ))}
           </div>
         ) : (
-          <img src={Empty} className="empty-cart-image"></img>
+          <div>
+            <img
+              src="	https://hsnbazar.com/images/empty-cart.png"
+              className="empty-cart-image"
+            ></img>
+          </div>
         )}
 
         <div>

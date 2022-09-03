@@ -68,6 +68,11 @@
   color: red;
 }
 
+.empty-img-wishlist {
+  width: 45vw;
+  margin-left: 50%;
+}
+
 @media only screen and (max-width: 850px) {
   .wishlist-box-container {
     display: grid;
@@ -81,5 +86,10 @@
   }
   .wishlist-cart-button {
     padding: 0.5rem 1rem;
+  }
+  .empty-img-wishlist {
+    width: 90vw;
+
+    margin-left: 0%;
   }
 }
