@@ -29,7 +29,6 @@ const FilterBar = () => {
           <input
             type="checkbox"
             checked={!itemsInStocks}
-            // value="item_stocks"
             onChange={() => dispatchItem({ type: "item_stocks" })}
           />
           Include Out Of Stocks
@@ -40,7 +39,6 @@ const FilterBar = () => {
             <input
               checked={getFastDelivery}
               type="checkbox"
-              // value="item_delivery"
               onChange={() => dispatchItem({ type: "item_delivery" })}
             />
             Fast Delivery
@@ -49,7 +47,6 @@ const FilterBar = () => {
         <label style={{ fontSize: "1rem" }}>
           <input
             type="checkbox"
-            // value="best_seller"
             checked={bestSeller}
             onChange={() => dispatchItem({ type: "best_seller" })}
           />
@@ -63,6 +60,7 @@ const FilterBar = () => {
           className="radiobox"
           value="male"
           name="category"
+          checked={state.category === "MALE"}
           onChange={() => dispatchItem({ type: "CATEGORY", payload: "MALE" })}
         />
         Men
@@ -73,6 +71,7 @@ const FilterBar = () => {
           type="radio"
           value="female"
           name="category"
+          checked={state.category === "FEMALE"}
           onChange={() => dispatchItem({ type: "CATEGORY", payload: "FEMALE" })}
         />
         Women
@@ -82,6 +81,7 @@ const FilterBar = () => {
           type="radio"
           value="kids"
           name="category"
+          checked={state.category === "KIDS"}
           onChange={() => dispatchItem({ type: "CATEGORY", payload: "KIDS" })}
         />
         Kids
@@ -203,6 +203,7 @@ const FilterBar = () => {
             type="radio"
             value="10"
             name="discount"
+            checked={state.discount === "ABOVE_10"}
             onChange={() =>
               dispatchItem({ type: "DISCOUNT", payload: "ABOVE_10" })
             }
@@ -214,6 +215,7 @@ const FilterBar = () => {
             type="radio"
             value="20"
             name="discount"
+            checked={state.discount === "ABOVE_20"}
             onChange={() =>
               dispatchItem({ type: "DISCOUNT", payload: "ABOVE_20" })
             }
@@ -225,6 +227,7 @@ const FilterBar = () => {
             type="radio"
             value="30"
             name="discount"
+            checked={state.discount === "ABOVE_30"}
             onChange={() =>
               dispatchItem({ type: "DISCOUNT", payload: "ABOVE_30" })
             }
@@ -236,6 +239,7 @@ const FilterBar = () => {
             type="radio"
             value="40"
             name="discount"
+            checked={state.discount === "ABOVE_40"}
             onChange={() =>
               dispatchItem({ type: "DISCOUNT", payload: "ABOVE_40" })
             }
@@ -247,6 +251,7 @@ const FilterBar = () => {
             type="radio"
             value="50"
             name="discount"
+            checked={state.discount === "ABOVE_50"}
             onChange={() =>
               dispatchItem({ type: "DISCOUNT", payload: "ABOVE_50" })
             }
