@@ -1,8 +1,8 @@
 import React from "react";
 import { createContext, useReducer, useContext } from "react";
 import filterReducer from "../reducer/filterReducer";
-const FilterContext = createContext();
 
+const FilterContext = createContext();
 const initialState = {
   name: {
     Air: false,

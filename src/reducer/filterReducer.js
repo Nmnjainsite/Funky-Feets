@@ -100,7 +100,7 @@ const filterReducer = (state, action) => {
       return {
         ...state,
         sortby: null,
-        category: null,
+        category: "",
         itemsInStocks: true,
         getFastDelivery: false,
         bestSeller: false,

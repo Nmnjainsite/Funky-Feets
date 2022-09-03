@@ -28,7 +28,8 @@ const FilterBar = () => {
         <label style={{ fontSize: "1rem" }}>
           <input
             type="checkbox"
-            value="item_stocks"
+            checked={!itemsInStocks}
+            // value="item_stocks"
             onChange={() => dispatchItem({ type: "item_stocks" })}
           />
           Include Out Of Stocks
@@ -37,8 +38,9 @@ const FilterBar = () => {
           {" "}
           <label style={{ fontSize: "1rem" }}>
             <input
+              checked={getFastDelivery}
               type="checkbox"
-              value="item_delivery"
+              // value="item_delivery"
               onChange={() => dispatchItem({ type: "item_delivery" })}
             />
             Fast Delivery
@@ -47,7 +49,8 @@ const FilterBar = () => {
         <label style={{ fontSize: "1rem" }}>
           <input
             type="checkbox"
-            value="best_seller"
+            // value="best_seller"
+            checked={bestSeller}
             onChange={() => dispatchItem({ type: "best_seller" })}
           />
           Best Seller
@@ -57,17 +60,19 @@ const FilterBar = () => {
       <label>
         <input
           type="radio"
+          className="radiobox"
           value="male"
-          name="categories"
+          name="category"
           onChange={() => dispatchItem({ type: "CATEGORY", payload: "MALE" })}
         />
         Men
       </label>
       <label>
         <input
+          className="radiobox"
           type="radio"
           value="female"
-          name="categories"
+          name="category"
           onChange={() => dispatchItem({ type: "CATEGORY", payload: "FEMALE" })}
         />
         Women
@@ -76,11 +81,12 @@ const FilterBar = () => {
         <input
           type="radio"
           value="kids"
-          name="categories"
+          name="category"
           onChange={() => dispatchItem({ type: "CATEGORY", payload: "KIDS" })}
         />
         Kids
       </label>
+
       <hr style={{ width: "100%" }} />
       <div className="filter-nav">
         <p className="nav-heading">Producer</p>
@@ -89,6 +95,7 @@ const FilterBar = () => {
             type="checkbox"
             value="adidas"
             name="producer"
+            checked={adidas}
             onChange={() => dispatchItem({ type: "SHOW_ADIDAS" })}
           />
           adidas
@@ -96,8 +103,9 @@ const FilterBar = () => {
         <label>
           <input
             type="checkbox"
-            value="air max"
+            value="Air"
             name="producer"
+            checked={Air}
             onChange={() => dispatchItem({ type: "SHOW_AIR" })}
           />
           Air Max
@@ -105,8 +113,9 @@ const FilterBar = () => {
         <label>
           <input
             type="checkbox"
-            value="sparx"
+            value="Sparx"
             name="producer"
+            checked={Sparx}
             onChange={() => dispatchItem({ type: "SHOW_SPARX" })}
           />
           Sparx
@@ -114,8 +123,9 @@ const FilterBar = () => {
         <label>
           <input
             type="checkbox"
-            value="puma"
+            value="Puma"
             name="producer"
+            checked={Puma}
             onChange={() => dispatchItem({ type: "SHOW_PUMA" })}
           />
           Puma
@@ -123,8 +133,9 @@ const FilterBar = () => {
         <label>
           <input
             type="checkbox"
-            value="liberty"
+            value="Liberty"
             name="producer"
+            checked={Liberty}
             onChange={() => dispatchItem({ type: "SHOW_LIBERTY" })}
           />
           Liberty
@@ -136,8 +147,9 @@ const FilterBar = () => {
         <label>
           <input
             type="checkbox"
-            value="casuals"
+            value="casual"
             name="style"
+            checked={casual}
             onChange={() => dispatchItem({ type: "SHOW_CASUAL" })}
           />
           casuals
@@ -147,6 +159,7 @@ const FilterBar = () => {
             type="checkbox"
             value="sneakers"
             name="style"
+            checked={sneakers}
             onChange={() => dispatchItem({ type: "SHOW_SNEAKERS" })}
           />
           sneakers
@@ -156,6 +169,7 @@ const FilterBar = () => {
             type="checkbox"
             value="sports"
             name="style"
+            checked={sports}
             onChange={() => dispatchItem({ type: "SHOW_SPORTS" })}
           />
           sports
@@ -165,6 +179,7 @@ const FilterBar = () => {
             type="checkbox"
             value="formals"
             name="style"
+            checked={formals}
             onChange={() => dispatchItem({ type: "SHOW_FORMALS" })}
           />
           formal
@@ -174,6 +189,7 @@ const FilterBar = () => {
             type="checkbox"
             value="crocs"
             name="style"
+            checked={crocs}
             onChange={() => dispatchItem({ type: "SHOW_CROCS" })}
           />
           Crocs
@@ -185,7 +201,7 @@ const FilterBar = () => {
         <label>
           <input
             type="radio"
-            value="10%"
+            value="10"
             name="discount"
             onChange={() =>
               dispatchItem({ type: "DISCOUNT", payload: "ABOVE_10" })
@@ -196,7 +212,7 @@ const FilterBar = () => {
         <label>
           <input
             type="radio"
-            value="20%"
+            value="20"
             name="discount"
             onChange={() =>
               dispatchItem({ type: "DISCOUNT", payload: "ABOVE_20" })
@@ -207,7 +223,7 @@ const FilterBar = () => {
         <label>
           <input
             type="radio"
-            value="30%"
+            value="30"
             name="discount"
             onChange={() =>
               dispatchItem({ type: "DISCOUNT", payload: "ABOVE_30" })
@@ -218,7 +234,7 @@ const FilterBar = () => {
         <label>
           <input
             type="radio"
-            value="40%"
+            value="40"
             name="discount"
             onChange={() =>
               dispatchItem({ type: "DISCOUNT", payload: "ABOVE_40" })
@@ -229,7 +245,7 @@ const FilterBar = () => {
         <label>
           <input
             type="radio"
-            value="50%"
+            value="50"
             name="discount"
             onChange={() =>
               dispatchItem({ type: "DISCOUNT", payload: "ABOVE_50" })
