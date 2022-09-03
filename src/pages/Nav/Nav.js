@@ -31,13 +31,22 @@ function Nav() {
   return (
     <>
       <div className="title-container">
-        <Link to="/" style={{ color: "black", cursor: "pointer" }}>
-          <h1 className="title">Funky Feet</h1>
+        <div className="app-title">
           <img
             src="https://i.pinimg.com/originals/a5/3c/59/a53c5901712da82a3f52618f14ab2756.jpg"
             className="product-logo"
           ></img>
-        </Link>
+          <Link
+            to="/"
+            style={{
+              color: "white",
+              cursor: "pointer",
+              textDecoration: "none",
+            }}
+          >
+            <h1 className="title">Funky Feet</h1>
+          </Link>
+        </div>
         <input
           className="input"
           placeholder="search your category or brand"

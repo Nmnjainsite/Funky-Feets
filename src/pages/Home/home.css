@@ -24,17 +24,21 @@
 }
 .title {
   font-family: "Macondo", cursive;
-  margin: 1rem;
+  margin-top: -1.4rem;
+  padding: 0rem 0rem;
+  margin-left: 4.5rem;
+  width: 9rem;
   grid-column-start: 1;
   grid-column-end: 2;
   color: var(--primary-color);
 }
-.nav-logo-home {
-  font-size: 3rem;
-  position: relative;
-  right: 6rem;
-  bottom: 1rem;
-}
+
+/* .app-title {
+  display: flex;
+  justify-content: center;
+  margin: 0rem;
+} */
+
 /* -----------search bar------------- */
 
 .input {
@@ -367,12 +371,12 @@
   }
   .badge-icons {
     font-size: 1.5rem;
-    right: 0.5rem;
+    right: 0rem;
     top: 1.4rem;
   }
 
   .badge-icons-2 {
-    right: 2rem;
+    right: 1rem;
     font-size: 1.5rem;
     top: 0rem;
   }
