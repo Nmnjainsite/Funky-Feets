@@ -114,7 +114,7 @@ function Login() {
                   });
                 }}
               >
-                Login As Guest
+                {isLoggedIn ? "Logout" : "Login As Guest"}
               </button>
             </div>
             {answer && <p>Wrong Attempt!</p>}

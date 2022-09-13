@@ -12,6 +12,7 @@ import { ProductDetails } from "./pages/SingleProduct/productDetail";
 import { NotFound } from "./pages/Error404/404";
 import { RequireAuth } from "./pages/RequireAuth";
 import CheckOut from "./pages/checkout/checkout";
+
 export default function App() {
   return (
     <div className="App">

@@ -1,6 +1,6 @@
 import { BsFillHeartFill, BsStar, BsHeart } from "react-icons/bs";
 import { useWishlist } from "../../context/wishlist-context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { findArray } from "../../utils/find";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,7 +10,7 @@ function ProductImg({ products }) {
   const { wishlistState, wishlistDispatch } = useWishlist();
   const isInWishlist = findArray(_id, wishlistState.itemInWishlist);
   const { isLoggedIn } = useAuth();
-
+  const navigate = useNavigate();
   const WishlistHandler = (id, products) => {
     if (isLoggedIn) {
       if (isInWishlist) {
@@ -27,6 +27,7 @@ function ProductImg({ products }) {
         });
       }
     } else {
+      navigate("/login");
       toast.error("Please Login First !", {
         position: "top-center",
         autoClose: 1000,

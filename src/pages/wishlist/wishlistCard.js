@@ -22,7 +22,7 @@ function WishlistCardView({ products }) {
     fast_delivery,
     in_stocks,
   } = products;
-  const { wishlistState, wishlistDispatch } = useWishlist();
+  const { wishlistDispatch } = useWishlist();
   const [{ state, item }, dispatch] = useItem();
   const navigate = useNavigate();
   const isInCart = findArray(_id, item);
@@ -103,7 +103,7 @@ function WishlistCardView({ products }) {
           {isInCart ? (
             <button
               className="wishlist-cart-button"
-              onClick={() => navigate("/Cart")}
+              onClick={() => cartHandler(_id, products)}
             >
               Go To Cart
             </button>

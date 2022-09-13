@@ -2,14 +2,11 @@ import React from "react";
 import { useWishlist } from "../../context/wishlist-context";
 import { Footer } from "../footer/footer";
 import { Nav } from "../Nav/Nav";
-import Empty from "../../assets/empty-cart.svg";
 import WishlistCardView from "./wishlistCard";
-
 function Wishlist() {
   const {
     wishlistState: { itemInWishlist },
   } = useWishlist();
-
   return (
     <div className="App">
       <Nav />
@@ -25,7 +22,6 @@ function Wishlist() {
           ></img>
         )}
       </div>
-
       <Footer />
     </div>
   );

@@ -30,11 +30,22 @@ function itemReducer(state, action) {
             : data.qty
         ),
       };
-    case "CLEAR":
-      return {
-        item: [],
-        value: 0,
-      };
+    case "GET_PRICE":
+      const getPrice = state.item.reduce(
+        (acc, curr) => acc + Number(curr.price * curr.qty),
+        0
+      );
+      return { ...state, getPrice: getPrice };
+
+    case "GET_ORIGINAL_PRICE":
+      const getOriginalPrice = state.item.reduce(
+        (acc, curr) => acc + Number(curr.original_price * curr.qty),
+        0
+      );
+      return { ...state, getOriginalPrice: getOriginalPrice };
+    case "GET_DISCOUNT":
+      const getDiscount = state.getOriginalPrice - state.getPrice;
+      return { ...state, getDiscount: getDiscount };
     default:
       return state;
   }

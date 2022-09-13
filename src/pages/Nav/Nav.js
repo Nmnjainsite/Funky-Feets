@@ -5,9 +5,12 @@ import { BsFillCartFill, BsFillHeartFill } from "react-icons/bs";
 import { useWishlist } from "../../context/wishlist-context";
 import { useAuth } from "../../context/auth-context";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 function Nav() {
-  const [{ item }] = useItem();
+  const [{ item, getQuantity }] = useItem();
   const { state, dispatchItem } = useFilter();
+  const navigate = useNavigate();
   const {
     sortBy,
     searchValue,
@@ -22,12 +25,11 @@ function Nav() {
   const { casual, sneakers, sports, formals, crocs } = categoryName;
   const { Air, Sparx, adidas, Puma, Liberty } = name;
   const { wishlistState } = useWishlist();
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
   const [quantity, showQuantity] = useState();
   useEffect(() => {
     showQuantity(item.reduce((acc, curr) => acc + curr.qty, 0));
   }, [item]);
-
   return (
     <>
       <div className="title-container">
@@ -68,11 +70,24 @@ function Nav() {
         </div>
         <div className="right-nav">
           <span className="userName">Hi,User</span>
-          <Link to="/Login">
-            <button className="btn-right">
-              {isLoggedIn ? "Logout" : "Login"}
-            </button>
-          </Link>
+
+          <button
+            className="btn-right"
+            onClick={() => {
+              if (isLoggedIn) {
+                toast.error("Logout Successfully", {
+                  position: "top-center",
+                  autoClose: 1000,
+                });
+                navigate("/");
+                setIsLoggedIn((login) => !isLoggedIn);
+              } else {
+                navigate("/login");
+              }
+            }}
+          >
+            {isLoggedIn ? "Logout" : "Login"}
+          </button>
         </div>
       </div>
     </>

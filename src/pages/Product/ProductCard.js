@@ -7,6 +7,7 @@ import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from "../../context/auth-context";
+
 function ProductCard({ products }) {
   const {
     _id,
@@ -17,7 +18,6 @@ function ProductCard({ products }) {
     fast_delivery,
     in_stocks,
     discount,
-    noDetail,
   } = products;
   const [{ state, item }, dispatch] = useItem();
   const navigate = useNavigate();
@@ -38,6 +38,7 @@ function ProductCard({ products }) {
         });
       }
     } else {
+      navigate("/login");
       toast.error("Please Login First", {
         position: "top-center",
         autoClose: 1000,
@@ -89,11 +90,6 @@ function ProductCard({ products }) {
             {!in_stocks ? "Out Of Stock" : "Add To Cart"}
           </button>
         )}
-        {/* {!noDetail && (
-          <Link to={`/ProductDetail/${_id}`}>
-            <button className="view-details-btn"> View Details</button>
-          </Link>
-        )} */}
       </div>
     </li>
   );

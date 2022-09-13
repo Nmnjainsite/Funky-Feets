@@ -13,7 +13,7 @@ const SortBar = () => {
           dispatchItem({ type: "sort", payload: e.target.value })
         }
       >
-        <option checked value="DEFAULT">
+        <option checked value="DEFAULT" >
           Sort Items
         </option>
         <option checked value="high-price">

@@ -31,7 +31,9 @@ const CardView = ({ products }) => {
       <ul className="wishlist-container">
         <li className="wishlist-cart ">
           <div className="img-col-1 ">
-            <img src={img} className="cart-image" key={img}></img>
+            <Link to={`/ProductDetail/${_id}`}>
+              <img src={img} className="cart-image" key={img}></img>
+            </Link>
           </div>
 
           <div className="wishlist-cart-typography">
@@ -93,14 +95,13 @@ const CardView = ({ products }) => {
                 }
               >
                 +
-              </button>{" "}
+              </button>
               <div>
-                {" "}
-                {!noDetail && (
+                {/* {!noDetail && (
                   <Link to={`/ProductDetail/${_id}`}>
                     <button className="view-details-btn"> View Details</button>
                   </Link>
-                )}
+                )} */}
               </div>
             </div>
           </div>
@@ -138,7 +139,6 @@ const CardView = ({ products }) => {
             ></BsHeart>
           )}
           <div>
-            {" "}
             <AiFillDelete
               style={{
                 fontSize: "1.1rem",
@@ -148,9 +148,6 @@ const CardView = ({ products }) => {
                 dispatch({
                   type: "REMOVE_FROM_CART",
                   payload: _id,
-                  payload1: price,
-                  payload2: original_price,
-                  payload3: original_price - price,
                 });
                 toast.error(" Removed From Cart !", {
                   position: "top-center",

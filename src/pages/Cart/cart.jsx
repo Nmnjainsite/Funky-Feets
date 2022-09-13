@@ -9,36 +9,24 @@ import CardView from "./CardView";
 import { Footer } from "../footer/footer";
 import React from "react";
 export default function Cart() {
-  const [{ item }, dispatch] = useItem();
-  const [total, setTotal] = useState(0);
-  const [original, setOriginal] = useState(0);
-  const [discountValue, setDiscountValue] = useState(0);
-  const [quantity, showQuantity] = useState(0);
+  const [
+    { item, getPrice, getOriginalPrice, getDiscount, getQuantity },
+    dispatch,
+  ] = useItem();
+
+  const [quantity, showQuantity] = useState();
+
   useEffect(() => {
-    setTotal(
-      item.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
-    );
-    setOriginal(
-      item.reduce(
-        (acc, curr) => acc + Number(curr.original_price) * curr.qty,
-        0
-      )
-    );
-    setDiscountValue(
-      item.reduce(
-        (acc, curr) =>
-          acc + Number(curr.original_price - curr.price) * curr.qty,
-        0
-      )
-    );
+    dispatch({ type: "GET_PRICE" });
+    dispatch({ type: "GET_ORIGINAL_PRICE" });
+    dispatch({ type: "GET_DISCOUNT" });
     showQuantity(item.reduce((acc, curr) => acc + curr.qty, 0));
   }, [item]);
-
   return (
     <div>
       <Nav />
       {quantity > 0 && (
-        <h1 className="subtotoal-num"> Subtotal({quantity}) Items</h1>
+        <h1 className="subtotoal-num"> Subtotal({quantity})Items</h1>
       )}
 
       <div className="cart-box">
@@ -58,7 +46,7 @@ export default function Cart() {
         )}
 
         <div>
-          {total > 0 && (
+          {getPrice > 0 && (
             <div className="total-item">
               <h3 className="subtotal">Order Summary</h3>
               <hr />
@@ -67,13 +55,16 @@ export default function Cart() {
                 <span style={{ float: "left" }}>MRP :</span>
                 <span>
                   <BiRupee></BiRupee>
-                  {original}
+                  {getOriginalPrice}
                 </span>
               </p>
 
               <p>
                 <span style={{ float: "left" }}>Discount :</span>
-                <span>{discountValue}</span>
+                <span>
+                  <BiRupee></BiRupee>
+                  {getDiscount}
+                </span>
               </p>
               <p>
                 <span style={{ float: "left" }}>Delivery :</span>
@@ -85,13 +76,13 @@ export default function Cart() {
                 <span style={{ float: "left" }}>Items :</span>
                 <span>
                   <BiRupee></BiRupee>
-                  {total}
+                  {getPrice}
                 </span>
               </p>
               <h4 style={{ color: "brown" }}>
                 <span style={{ float: "left" }}>Order Total:</span>
                 <BiRupee></BiRupee>
-                {total + 99}
+                {getPrice + 99}
               </h4>
               <hr />
               <div style={{ textAlign: "center" }}>

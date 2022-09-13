@@ -6,17 +6,19 @@ const useItem = () => useContext(ItemContext);
 
 const initialState = {
   item: [],
+  getPrice: null,
+  getOriginalPrice: null,
+  getDiscount: null,
 };
 
 function ItemProvider({ children }) {
-  const [{ item }, dispatch] = useReducer(itemReducer, initialState);
+  const [{ state, item, getPrice, getOriginalPrice, getDiscount }, dispatch] =
+    useReducer(itemReducer, initialState);
 
   return (
     <ItemContext.Provider
       value={[
-        {
-          item,
-        },
+        { state, item, getPrice, getOriginalPrice, getDiscount },
         dispatch,
       ]}
     >

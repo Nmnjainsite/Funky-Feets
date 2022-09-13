@@ -64,19 +64,18 @@ body {
 }
 
 .order-button {
-  border: none;
   border-radius: 0.3rem;
   padding: 0.7rem 4rem;
   background-color: var(--background-color);
   color: var(--primary-color);
   cursor: pointer;
   text-align: center;
+  border: 1px solid var(--background-color);
 }
 
 .order-button:hover {
   background-color: var(--primary-color);
   color: var(--background-color);
-  border: 1px solid var(--background-color);
 }
 
 .cart-image {

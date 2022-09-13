@@ -38,7 +38,6 @@
   font-size: 1.4rem;
   font-family: "signika negative", sans-serif;
 }
-
 .filter-nav {
   display: flex;
   flex-direction: column;
@@ -197,6 +196,6 @@ input {
   }
 
   .img-box {
-    height: 44vw;
+    height: 47vw;
   }
 }
