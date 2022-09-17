@@ -76,14 +76,14 @@ function SingleProductCard({ products }) {
   return (
     <>
       <div className="productDetails-container">
-        {/* <div className=""> */}
+   
         <img
           src={img}
           key={img}
           className="productDetails-img"
           style={{ border: "none" }}
         ></img>
-        {/* </div> */}
+   
         <div className="productDetails-typo">
           <h3 key={name} className="product-name" style={{ fontSize: "2rem" }}>
             {name}

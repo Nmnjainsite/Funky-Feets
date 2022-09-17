@@ -3,7 +3,6 @@ import { BiRupee } from "react-icons/bi";
 import React, { useEffect } from "react";
 import { useItem } from "../../context/item-context";
 import { useWishlist } from "../../context/wishlist-context";
-import { Footer } from "../footer/footer";
 import "./cart.css";
 import { findArray } from "../../utils/find";
 import { Link } from "react-router-dom";
@@ -20,7 +19,6 @@ const CardView = ({ products }) => {
     discount,
     original_price,
     qty,
-    noDetail,
   } = products;
   const [{ item }, dispatch] = useItem();
   const { wishlistState, wishlistDispatch } = useWishlist();
@@ -96,13 +94,7 @@ const CardView = ({ products }) => {
               >
                 +
               </button>
-              <div>
-                {/* {!noDetail && (
-                  <Link to={`/ProductDetail/${_id}`}>
-                    <button className="view-details-btn"> View Details</button>
-                  </Link>
-                )} */}
-              </div>
+              <div></div>
             </div>
           </div>
         </li>
