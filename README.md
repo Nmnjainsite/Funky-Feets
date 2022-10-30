@@ -66,4 +66,4 @@ Error 404 Page
 
 ![products page](https://user-images.githubusercontent.com/101793920/198889147-513557a5-b7fe-43cb-be68-191592b6705d.png)
 
-![product2](https://user-images.githubusercontent.com/101793920/198889182-3a13d6cf-6acf-46ea-a06c-d48e94b6f193.png)
+
