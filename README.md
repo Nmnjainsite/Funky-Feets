@@ -1,5 +1,5 @@
-# Funky Feet
-
-This is an e-commerce website.Where you can create an order,add the order into wishlist.
+# Funky Feet Shoe house, Online Store.
  
- Pages
+Live link
+
+[Funky Feet](![funky feet](https://user-images.githubusercontent.com/101793920/198887605-240f0688-4a3d-4d17-bd29-dec1e4fdd3b8.png)
