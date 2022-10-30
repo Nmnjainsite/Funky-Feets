@@ -62,4 +62,7 @@ Error 404 Page
 * CSS
 * JavaScript
 
+# Images
+
+![products page](https://user-images.githubusercontent.com/101793920/198889147-513557a5-b7fe-43cb-be68-191592b6705d.png)
 
