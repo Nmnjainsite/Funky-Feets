@@ -66,4 +66,8 @@ Error 404 Page
 
 ![products page](https://user-images.githubusercontent.com/101793920/198889147-513557a5-b7fe-43cb-be68-191592b6705d.png)
 
+![cart](https://user-images.githubusercontent.com/101793920/198890712-ad4724a6-575d-45a5-ac69-16113e044773.png)
 
+![login pagr](https://user-images.githubusercontent.com/101793920/198890714-15f82dd5-04fb-4a83-bcc8-2a687e86fd0f.png)
+
+![404page22](https://user-images.githubusercontent.com/101793920/198890836-1c6c5c33-5bbb-4843-bad7-2403bc93ed63.png)
